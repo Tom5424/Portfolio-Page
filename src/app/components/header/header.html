@@ -3,13 +3,19 @@
         <a href="#">
             <img src="/icons/favicon.png" alt="Icon">
         </a>
-        <a href="#">Why me</a>
-        <a href="#">Skills</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
+
+        <ul>
+
+            @for (navigationItem of navigationItems; track $index) {
+            <li>
+                <a href="#">{{ navigationItem }}</a>
+            </li>
+            }
+
+        </ul>
     </nav>
 
-    
+
     <div class="conatiner-switch-languages">
         <p>DE</p>
         <hr>

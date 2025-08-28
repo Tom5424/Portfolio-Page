@@ -1,3 +1,6 @@
+@use '../variables.scss';
+
+
 main {
-    background-color: #120B35;
+    background-color: variables.$color-background;
 }

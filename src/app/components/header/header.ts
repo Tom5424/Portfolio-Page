@@ -10,5 +10,5 @@ import { Component } from '@angular/core';
 
 
 export class Header {
-
+  navigationItems: string[] = ['Why me', 'Skills', 'Projects', 'Contact'];
 }

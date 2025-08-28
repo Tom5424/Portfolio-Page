@@ -1,0 +1,88 @@
+@use '../../../variables.scss';
+
+
+header {
+    padding: variables.$padding-header-y variables.$padding-header-x;
+    display: flex;
+    justify-content: space-between;
+
+
+    nav {
+        gap: variables.$gap-xxl;
+        display: flex;
+        align-items: center;
+
+
+        a {
+
+
+            img {
+                width: 55px;
+                height: 55px;
+            }
+        }
+
+
+        ul {
+            gap: variables.$gap-xl;
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+
+
+            li {
+
+
+                a {
+                    font-size: variables.$font-size-xl;
+                    font-weight: variables.$font-weight-medium;
+                    color: variables.$color-primary;
+                    text-decoration: none;
+
+
+                    &:hover {
+                        color: variables.$color-accent;
+                        transition: hover 125ms ease-in-out;
+                    }
+
+
+                    &:active {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.conatiner-switch-languages {
+    gap: variables.$gap-xxs;
+    align-items: center;
+    display: flex;
+
+
+    p {
+        color: variables.$color-primary;
+        font-size: variables.$font-size-lg;
+        font-weight: variables.$font-weight-bold;
+        margin: 0;
+        cursor: pointer;
+
+
+        &:hover {
+            color: variables.$color-accent;
+            transition: hover 125ms ease-in-out;
+        }
+    }
+
+
+    hr {
+        background-color: variables.$color-primary;
+        border: unset;
+        width: 3px;
+        height: 22px;
+        margin: 0;
+    }
+}
