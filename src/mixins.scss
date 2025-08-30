@@ -1,0 +1,43 @@
+@mixin flex-box($justify: null, $align: null) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+
+@mixin width-and-height($width: null, $height: null) {
+    width: $width;
+    height: $height;
+}
+
+
+@mixin font-size-and-weight($size: null, $weight: null) {
+    font-size: $size;
+    font-weight: $weight
+}
+
+
+@mixin hover($cursor: null, $color: null, $transition: null) {
+
+
+    &:hover {
+        cursor: $cursor;
+        color: $color;
+        transition: $transition;
+    }
+}
+
+
+@mixin active($transition: null, $color: null, $active-effect: ()) {
+
+
+    &:active {
+        transition: $transition;
+        color: $color;
+
+
+        @each $property, $value in $active-effect {
+            #{$property}: #{$value};
+        }
+    }
+}
