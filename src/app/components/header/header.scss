@@ -45,13 +45,13 @@ header {
 }
 
 
-.conatiner-switch-languages {
+.container-switch-languages {
     @include mixins.flex-box($align: center);
     gap: variables.$gap-xxs;
 
 
     p {
-        @include mixins.hover(pointer, variables.$color-accent, hover 125ms ease-in-out);
+        @include mixins.hover($cursor: pointer, $color:variables.$color-accent, $transition: hover 125ms ease-in-out);
         @include mixins.font-size-and-weight(variables.$font-size-lg, variables.$font-weight-bold);
         color: variables.$color-primary;
         margin: 0;
