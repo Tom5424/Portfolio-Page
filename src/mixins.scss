@@ -1,7 +1,8 @@
-@mixin flex-box($justify: null, $align: null) {
+@mixin flex-box($justify: null, $align: null, $flex: null) {
     display: flex;
     justify-content: $justify;
     align-items: $align;
+    flex-direction: $flex;
 }
 
 
@@ -13,16 +14,18 @@
 
 @mixin font-size-and-weight($size: null, $weight: null) {
     font-size: $size;
-    font-weight: $weight
+    font-weight: $weight;
 }
 
 
-@mixin hover($cursor: null, $color: null, $transition: null) {
+@mixin hover($cursor: null, $filter: null, $color: null, $border: null, $transition: null) {
 
 
     &:hover {
         cursor: $cursor;
+        filter: $filter;
         color: $color;
+        border: $border;
         transition: $transition;
     }
 }

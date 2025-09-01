@@ -4,7 +4,7 @@
 
 header {
     @include mixins.flex-box($justify: space-between);
-    padding: variables.$padding-header-y variables.$padding-header-x;
+    padding: 24px 140px 24px 140px;
 
 
     nav {

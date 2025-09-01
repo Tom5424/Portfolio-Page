@@ -1,0 +1,61 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+section {
+    padding: 24px 140px 24px 140px;
+}
+
+
+.container-button-icon-and-image {
+    @include mixins.flex-box($align: center, $justify: space-between);
+
+
+    a:first-child {
+        @include mixins.hover($color: variables.$color-accent, $transition: hover 125ms ease-in-out);
+        color: variables.$color-primary;
+        font-size: variables.$font-size-lg;
+        font-weight: variables.$font-weight-medium;
+        border: 1px solid variables.$color-accent;
+        padding: 15px 30px 15px 30px;
+        transform: rotate(-90deg);
+        text-decoration: none;
+        background-color: unset;
+    }
+
+
+    a:nth-child(2) {
+        @include mixins.hover($filter: brightness(0) saturate(100%) invert(80%) sepia(34%) saturate(1664%) hue-rotate(105deg) brightness(96%) contrast(98%), $border: 1px solid variables.$color-accent, $transition: hover 125ms ease-in-out);
+        margin-top: 125px;
+        padding: 5px;
+    }
+
+
+    >img:last-of-type {
+        width: 320px;
+    }
+}
+
+
+.container-headlines {
+    @include mixins.flex-box($flex: column);
+    gap: 8px;
+    margin-top: -45px;
+    padding-left: 50px;
+
+
+    h1 {
+        color: variables.$color-accent;
+        font-size: variables.$font-size-xxxxl;
+        font-weight: variables.$font-weight-medium;
+        margin: 0;
+    }
+
+
+    h2 {
+        color: variables.$color-accent;
+        font-size: variables.$font-size-xxxxxl;
+        font-weight: variables.$font-weight-bold;
+        margin: 0;
+    }
+}
