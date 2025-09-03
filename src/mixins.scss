@@ -31,16 +31,12 @@
 }
 
 
-@mixin active($transition: null, $color: null, $active-effect: ()) {
+@mixin active($transition: null, $color: null, $text: null) {
 
 
     &:active {
         transition: $transition;
         color: $color;
-
-
-        @each $property, $value in $active-effect {
-            #{$property}: #{$value};
-        }
+        text-decoration: $text;
     }
 }

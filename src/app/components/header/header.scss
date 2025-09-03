@@ -34,7 +34,7 @@ header {
 
                 a {
                     @include mixins.hover($transition: hover 125ms ease-in-out, $color: variables.$color-accent);
-                    @include mixins.active($active-effect: (text-decoration: underline));
+                    @include mixins.active($text: underline);
                     @include mixins.font-size-and-weight(variables.$font-size-xl, variables.$font-weight-medium);
                     color: variables.$color-primary;
                     text-decoration: none;
