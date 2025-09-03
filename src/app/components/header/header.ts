@@ -1,9 +1,10 @@
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
@@ -16,4 +17,15 @@ export class Header {
     { 'name': 'Projects', 'href': '#' },
     { 'name': 'Contact', 'href': '#' },
   ];
+  activeLink: string = '';
+
+
+  setActiveLink(selectedLink: string): void {
+    this.activeLink = selectedLink;
+  }
+
+
+  getActiveLinkClass(selectedLink: string): string {
+    return this.activeLink === selectedLink ? 'active-link' : '';    
+  } 
 }

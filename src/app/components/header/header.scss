@@ -51,7 +51,7 @@ header {
 
 
     p {
-        @include mixins.hover($cursor: pointer, $color:variables.$color-accent, $transition: hover 125ms ease-in-out);
+        @include mixins.hover($cursor: pointer, $color: variables.$color-accent, $transition: hover 125ms ease-in-out);
         @include mixins.font-size-and-weight(variables.$font-size-lg, variables.$font-weight-bold);
         color: variables.$color-primary;
         margin: 0;
@@ -64,4 +64,10 @@ header {
         margin: 0;
         border: unset;
     }
+}
+
+
+.active-link {
+    color: variables.$color-accent !important;
+    text-decoration: underline !important;
 }
