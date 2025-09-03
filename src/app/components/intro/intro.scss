@@ -13,11 +13,11 @@ section {
 
     a:first-child {
         @include mixins.hover($color: variables.$color-accent, $transition: hover 125ms ease-in-out);
+        @include mixins.font-size-and-weight($size: variables.$font-size-lg, $weight: variables.$font-weight-medium);
         color: variables.$color-primary;
-        font-size: variables.$font-size-lg;
-        font-weight: variables.$font-weight-medium;
         border: 1px solid variables.$color-accent;
         padding: 15px 30px 15px 30px;
+        margin-left: -48px;
         transform: rotate(-90deg);
         text-decoration: none;
         background-color: unset;
@@ -32,7 +32,7 @@ section {
 
 
     >img:last-of-type {
-        width: 320px;
+        @include mixins.width-and-height($width: 320px);
     }
 }
 
@@ -41,21 +41,18 @@ section {
     @include mixins.flex-box($flex: column);
     gap: 8px;
     margin-top: -45px;
-    padding-left: 50px;
 
 
     h1 {
+        @include mixins.font-size-and-weight($size: variables.$font-size-xxxxl, $weight: variables.$font-weight-medium);
         color: variables.$color-accent;
-        font-size: variables.$font-size-xxxxl;
-        font-weight: variables.$font-weight-medium;
         margin: 0;
     }
 
 
     h2 {
+        @include mixins.font-size-and-weight($size: variables.$font-size-xxxxxl, $weight: variables.$font-weight-bold);
         color: variables.$color-accent;
-        font-size: variables.$font-size-xxxxxl;
-        font-weight: variables.$font-weight-bold;
         margin: 0;
     }
 }
