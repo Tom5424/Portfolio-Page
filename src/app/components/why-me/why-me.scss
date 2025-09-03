@@ -4,7 +4,7 @@
 
 // Scrolls complete to the why-me section and display no more the intro section 
 #why-me::before {
-    @include mixins.width-and-height($height: 650px);
+    @include mixins.width-and-height($height: 550px);
     content: '';
     display: block;
 }

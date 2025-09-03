@@ -6,6 +6,15 @@
 }
 
 
+@mixin position($position: null, $top: null, $bottom: null, $left: null, $right: null) {
+    position: $position;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+}
+
+
 @mixin width-and-height($width: null, $height: null) {
     width: $width;
     height: $height;

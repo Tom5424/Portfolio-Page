@@ -4,6 +4,9 @@
 
 header {
     @include mixins.flex-box($justify: space-between);
+    @include mixins.position($position: sticky, $top: 0);
+    background: linear-gradient(variables.$color-background 50%, rgba(11, 4, 45, 0.2) 150%);
+    z-index: 1;
     padding: 24px 140px 24px 140px;
 
 
