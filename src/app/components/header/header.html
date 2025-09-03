@@ -8,7 +8,7 @@
 
             @for (navigationItem of navigationItems; track $index) {
             <li>
-                <a href="#">{{ navigationItem }}</a>
+                <a [href]="navigationItem.href">{{ navigationItem.name }}</a>
             </li>
             }
 

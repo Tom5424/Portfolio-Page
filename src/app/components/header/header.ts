@@ -10,5 +10,10 @@ import { Component } from '@angular/core';
 
 
 export class Header {
-  navigationItems: string[] = ['Why me', 'Skills', 'Projects', 'Contact'];
+  navigationItems: { name: string, href: string }[] = [
+    { 'name': 'Why me', 'href': '#why-me' },
+    { 'name': 'Skills', 'href': '#' },
+    { 'name': 'Projects', 'href': '#' },
+    { 'name': 'Contact', 'href': '#' },
+  ];
 }
