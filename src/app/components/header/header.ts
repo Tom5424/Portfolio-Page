@@ -1,5 +1,6 @@
 import { NgClass } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject, WritableSignal } from '@angular/core';
+import { ScrollSpyService } from '../../services/scroll-spy-service';
 
 
 @Component({
@@ -11,21 +12,22 @@ import { Component } from '@angular/core';
 
 
 export class Header {
+  scrollSpyService = inject(ScrollSpyService);
+  activeLink: WritableSignal<string> = this.scrollSpyService.activeSection;
   navigationItems: { name: string, href: string }[] = [
     { 'name': 'Why me', 'href': '#why-me' },
     { 'name': 'Skills', 'href': '#' },
     { 'name': 'Projects', 'href': '#' },
     { 'name': 'Contact', 'href': '#' },
   ];
-  activeLink: string = '';
 
 
   setActiveLink(selectedLink: string): void {
-    this.activeLink = selectedLink;
+    this.scrollSpyService.setActiveSection(selectedLink);
   }
 
 
   getActiveLinkClass(selectedLink: string): string {
-    return this.activeLink === selectedLink ? 'active-link' : '';    
-  } 
+    return this.activeLink() === selectedLink ? 'active-link' : '';
+  }
 }
