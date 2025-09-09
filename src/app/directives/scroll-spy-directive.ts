@@ -21,15 +21,14 @@ export class ScrollSpyDirective implements OnInit {
   initIntersectionObserver(): void {
     this.intersectionObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => this.updateSectionVisibility(entry));
-    }, { threshold: this.generateThresholdArray() }
-    );
+    }, { threshold: this.generateThresholdArray() });
     this.intersectionObserver.observe(this.element.nativeElement);
   }
 
 
   updateSectionVisibility(entry: IntersectionObserverEntry): void {
     if (entry.intersectionRatio >= 0.95) {
-      this.scrollSpyService.setActiveSection('#' + this.element.nativeElement.id);
+      this.scrollSpyService.setActiveSection(this.element.nativeElement.id);
     } else if (entry.intersectionRatio <= 0) {
       this.scrollSpyService.clearActiveSection();
     }

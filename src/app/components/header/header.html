@@ -8,7 +8,7 @@
 
             @for (navigationItem of navigationItems; track $index) {
             <li>
-                <a [href]="navigationItem.href" (click)="setActiveLink(navigationItem.href)"
+                <a routerLink="/" [fragment]="navigationItem.href" (click)="setActiveLink(navigationItem.href)"
                     [ngClass]="getActiveLinkClass(navigationItem.href)">
                     {{ navigationItem.name }}
                 </a>

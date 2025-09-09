@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable, Output, signal, WritableSignal } from '@angular/core';
+import { Injectable, signal, WritableSignal } from '@angular/core';
 
 
 @Injectable({
