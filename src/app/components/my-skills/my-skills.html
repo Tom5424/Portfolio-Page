@@ -1,0 +1,15 @@
+<section id="my-skills" appScrollSpy>
+    <h2>My Skills</h2>
+
+
+    <ul>
+
+        @for (skill of skills; track $index) {
+        <li>
+            <img [src]="skill.imgPath" [alt]="skill.altText">
+            <span>{{ skill.text }}</span>
+        </li>
+        }
+
+    </ul>
+</section>

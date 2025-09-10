@@ -1,8 +1,9 @@
-@mixin flex-box($justify: null, $align: null, $flex: null) {
+@mixin flex-box($justify: null, $align: null, $flex: null, $wrap: null) {
     display: flex;
     justify-content: $justify;
     align-items: $align;
     flex-direction: $flex;
+    flex-wrap: $wrap;
 }
 
 

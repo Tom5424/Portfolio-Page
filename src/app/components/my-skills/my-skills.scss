@@ -1,0 +1,47 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+#my-skills::before {
+    @include mixins.width-and-height($height: 300px);
+    content: '';
+    display: block;
+}
+
+
+section {
+    padding: 24px 140px 24px 140px;
+
+
+    h2 {
+        @include mixins.font-size-and-weight($size: variables.$font-size-xxxxl, $weight: variables.$font-weight-medium);
+        color: variables.$color-primary;
+        margin: 0;
+    }
+
+
+    ul {
+        @include mixins.flex-box($wrap: wrap);
+        gap: 100px;
+        margin: 0;
+        padding: 40px 0 0 0;
+
+
+        li {
+            @include mixins.flex-box($flex: column, $align: center);
+            gap: 10px;
+            list-style: none;
+
+
+            img {
+                @include mixins.width-and-height($width: 55px, $height: 55px);
+            }
+
+
+            span {
+                @include mixins.font-size-and-weight($size: variables.$font-size-lg, $weight: variables.$font-weight-bold);
+                color: variables.$color-accent;
+            }
+        }
+    }
+}

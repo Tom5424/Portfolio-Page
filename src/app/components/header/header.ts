@@ -17,7 +17,7 @@ export class Header {
   activeLink: WritableSignal<string> = this.scrollSpyService.activeSection;
   navigationItems: { name: string, href: string }[] = [
     { 'name': 'Why me', 'href': 'why-me' },
-    { 'name': 'Skills', 'href': '' },
+    { 'name': 'Skills', 'href': 'my-skills' },
     { 'name': 'Projects', 'href': '' },
     { 'name': 'Contact', 'href': '' },
   ];
