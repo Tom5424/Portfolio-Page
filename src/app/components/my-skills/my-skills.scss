@@ -2,15 +2,10 @@
 @use '../../../mixins.scss';
 
 
-#my-skills::before {
-    @include mixins.width-and-height($height: 300px);
-    content: '';
-    display: block;
-}
-
-
 section {
+    @include mixins.flex-box($flex: column);
     padding: 24px 140px 24px 140px;
+    gap: 22px;
 
 
     h2 {
@@ -24,11 +19,12 @@ section {
         @include mixins.flex-box($wrap: wrap);
         gap: 100px;
         margin: 0;
-        padding: 40px 0 0 0;
+        padding: 0;
 
 
         li {
             @include mixins.flex-box($flex: column, $align: center);
+            @include mixins.width-and-height($width: 100px);
             gap: 10px;
             list-style: none;
 
@@ -41,7 +37,25 @@ section {
             span {
                 @include mixins.font-size-and-weight($size: variables.$font-size-lg, $weight: variables.$font-weight-bold);
                 color: variables.$color-accent;
+                text-align: center;
             }
+        }
+
+
+        li:last-of-type {
+
+
+            &:hover+p {
+                display: flex;
+            }
+        }
+
+
+        p {
+            @include mixins.font-size-and-weight($size: variables.$font-size-lg);
+            @include mixins.width-and-height($width: 30%);
+            color: variables.$color-accent;
+            margin: 0;
         }
     }
 }

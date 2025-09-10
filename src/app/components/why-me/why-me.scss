@@ -2,14 +2,6 @@
 @use '../../../mixins.scss';
 
 
-// Scrolls complete to the why-me section and display no more the intro section 
-#why-me::before {
-    @include mixins.width-and-height($height: 550px);
-    content: '';
-    display: block;
-}
-
-
 section {
     @include mixins.flex-box();
     padding: 24px 140px 24px 140px;
