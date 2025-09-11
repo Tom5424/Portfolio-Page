@@ -1,0 +1,104 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+section {
+    @include mixins.flex-box($flex: column);
+    gap: variables.$gap-m;
+    padding: 24px 140px 24px 140px;
+
+
+    h2 {
+        @include mixins.font-size-and-weight($size: variables.$font-size-xxxxl, $weight: variables.$font-weight-medium);
+        color: variables.$color-primary;
+        margin: 0;
+        text-align: center;
+    }
+}
+
+
+article {
+    @include mixins.flex-box($align: center);
+    gap: variables.$gap-xxl;
+
+
+    img {
+        @include mixins.width-and-height($width: 600px, $height: 320px);
+    }
+
+
+    &:nth-of-type(even) {
+        @include mixins.flex-box($flex: row-reverse);
+
+
+        .container-project-description {
+            @include mixins.flex-box($align: flex-end);
+
+
+            p {
+                text-align: end;
+            }
+        }
+    }
+}
+
+
+.container-project-description {
+    @include mixins.flex-box($flex: column);
+    gap: variables.$gap-xl;
+
+
+    h3 {
+        @include mixins.font-size-and-weight($size: variables.$font-size-xxxl, $weight: variables.$font-weight-bold);
+        color: variables.$color-accent;
+        margin: 0;
+    }
+
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+
+        li {
+            @include mixins.font-size-and-weight($size: variables.$font-size-lg);
+            color: variables.$color-accent;
+        }
+    }
+
+
+    p {
+        @include mixins.font-size-and-weight($size: variables.$font-size-lg);
+        @include mixins.width-and-height($width: 80%);
+        color: variables.$color-accent;
+        margin: 0;
+    }
+}
+
+
+.container-links {
+    @include mixins.flex-box();
+    gap: variables.$gap-lg;
+
+
+    a {
+        @include mixins.font-size-and-weight($size: variables.$font-size-lg, $weight: variables.$font-weight-bold);
+        padding: 15px 30px 15px 30px;
+        text-decoration: none;
+    }
+
+
+    a:first-child {
+        @include mixins.hover($color: variables.$color-accent, $transition: hover 125ms ease-in-out);
+        color: variables.$color-primary;
+        border: 1px solid variables.$color-accent;
+    }
+
+
+    a:last-child {
+        @include mixins.hover($color: variables.$color-primary, $transition: hover 125ms ease-in-out);
+        background-color: variables.$color-accent;
+        color: variables.$color-text-link;
+    }
+}

@@ -1,0 +1,26 @@
+<section>
+    <h2>My Projects</h2>
+
+
+    @for (project of projects; track $index) {
+    <article>
+        <img [src]="project.imgPath" alt="">
+
+
+        <div class="container-project-description">
+            <h3>{{ project.name }}</h3>
+
+            <ul>
+                <li>{{ project.technologies }}</li>
+            </ul>
+
+            <p>{{ project.description }}</p>
+
+            <div class="container-links">
+                <a [href]="project.githubLink" target="_blank">GitHub</a>
+                <a [href]="project.liveTestLink" target="_blank">Live Test</a>
+            </div>
+        </div>
+    </article>
+    }
+</section>

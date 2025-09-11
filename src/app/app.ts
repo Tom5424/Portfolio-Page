@@ -3,11 +3,12 @@ import { Header } from './components/header/header';
 import { Intro } from './components/intro/intro';
 import { WhyMe } from './components/why-me/why-me';
 import { MySkills } from './components/my-skills/my-skills';
+import { MyProjects } from './components/my-projects/my-projects';
 
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Intro, WhyMe, MySkills],
+  imports: [Header, Intro, WhyMe, MySkills, MyProjects],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
