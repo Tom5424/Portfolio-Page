@@ -12,12 +12,12 @@ export class ScrollSpyService {
   activatedRoute: ActivatedRoute = inject(ActivatedRoute);
   viewportScroller: ViewportScroller = inject(ViewportScroller);
   activeSection: WritableSignal<string> = signal<string>('');
-  sectionOffsets: { [key: string]: number } = { 'why-me': 300, 'my-skills': 100 };
+  sectionOffsets: { [key: string]: number } = { 'why-me': 300, 'my-skills': 100, 'my-projects': 120 };
   activeLink: string = '';
 
 
   setActiveSection(section: string): void {
-    this.activeSection.set(section); 
+    this.activeSection.set(section);
   }
 
 

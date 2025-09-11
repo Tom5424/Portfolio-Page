@@ -17,7 +17,7 @@ export class Header implements OnInit {
   navigationItems: { name: string, href: string }[] = [
     { 'name': 'Why me', 'href': 'why-me' },
     { 'name': 'Skills', 'href': 'my-skills' },
-    { 'name': 'Projects', 'href': '' },
+    { 'name': 'Projects', 'href': 'my-projects' },
     { 'name': 'Contact', 'href': '' },
   ];
 
