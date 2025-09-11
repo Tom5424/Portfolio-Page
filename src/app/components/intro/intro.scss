@@ -39,7 +39,7 @@ section {
 
 .container-headlines {
     @include mixins.flex-box($flex: column);
-    gap: 8px;
+    gap: variables.$gap-xs;
     margin-top: -45px;
 
 
