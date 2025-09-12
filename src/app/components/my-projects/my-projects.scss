@@ -55,19 +55,6 @@ article {
     }
 
 
-    ul {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-
-
-        li {
-            @include mixins.font-size-and-weight($size: variables.$font-size-lg);
-            color: variables.$color-accent;
-        }
-    }
-
-
     p {
         @include mixins.font-size-and-weight($size: variables.$font-size-lg);
         @include mixins.width-and-height($width: 80%);
