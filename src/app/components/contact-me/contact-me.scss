@@ -1,0 +1,117 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+section {
+    @include mixins.flex-box($flex: column);
+    gap: variables.$gap-m;
+    padding: 24px 140px 24px 140px;
+}
+
+
+.wrapper-container {
+    @include mixins.flex-box($justify: space-between, $align: center);
+
+
+    address {
+        font-style: normal;
+
+
+        a {
+            @include mixins.font-size-and-weight($size: variables.$font-size-lg, $weight: variables.$font-weight-medium);
+            @include mixins.hover($filter: brightness(0) saturate(100%) invert(80%) sepia(34%) saturate(1664%) hue-rotate(105deg) brightness(96%) contrast(98%), $transition: hover 125ms ease-in-out);
+            @include mixins.active($text: underline);
+            @include mixins.flex-box($align: center);
+            gap: variables.$gap-s;
+            color: variables.$color-accent;
+            text-decoration: none;
+        }
+    }
+
+
+    >a:last-child {
+        @include mixins.hover($filter: brightness(0) saturate(100%) invert(80%) sepia(34%) saturate(1664%) hue-rotate(105deg) brightness(96%) contrast(98%), $border: 1px solid variables.$color-accent, $transition: hover 125ms ease-in-out);
+        padding: 5px;
+    }
+}
+
+
+.container-headline-and-text {
+    @include mixins.width-and-height($width: 50%);
+    @include mixins.flex-box($flex: column);
+    gap: variables.$gap-m;
+
+
+    h2 {
+        @include mixins.font-size-and-weight($size: variables.$font-size-xxxxl, $weight: variables.$font-weight-medium);
+        color: variables.$color-primary;
+        margin: 0;
+    }
+
+
+    p {
+        @include mixins.font-size-and-weight($size: variables.$font-size-lg);
+        @include mixins.width-and-height($width: 80%);
+        color: variables.$color-accent;
+        margin: 0;
+    }
+}
+
+
+form {
+    @include mixins.flex-box($flex: column);
+    gap: variables.$gap-xxl;
+
+
+    label {
+        @include mixins.font-size-and-weight($size: variables.$font-size-lg);
+        @include mixins.hover($cursor: pointer);
+        @include mixins.width-and-height($width: fit-content);
+        color: variables.$color-accent;
+
+
+        a {
+            @include mixins.hover($weight: 700, $transition: hover 125ms ease-in-out);
+            color: variables.$color-primary;
+            text-decoration: none;
+        }
+    }
+}
+
+
+.form-group-wrapper {
+    @include mixins.flex-box();
+    gap: variables.$gap-xxl;
+
+
+    textarea {
+        @include mixins.input-field-and-textarea(660px);
+    }
+}
+
+
+.form-group {
+    @include mixins.flex-box($flex: column);
+    gap: variables.$gap-xxl;
+
+
+    input {
+        @include mixins.input-field-and-textarea(500px);
+    }
+}
+
+
+.container-button {
+    @include mixins.flex-box($justify: flex-end);
+
+
+    button {
+        @include mixins.font-size-and-weight($size: variables.$font-size-lg, $weight: variables.$font-weight-medium);
+        @include mixins.hover($cursor: not-allowed);
+        color: variables.$color-button-disabled;
+        border: 1px solid variables.$color-button-disabled;
+        font-family: 'Roboto Mono', monospace;
+        background-color: unset;
+        padding: 15px 30px 15px 30px;
+    }
+}

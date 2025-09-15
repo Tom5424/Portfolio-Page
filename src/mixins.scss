@@ -1,3 +1,6 @@
+@use 'variables.scss';
+
+
 @mixin flex-box($justify: null, $align: null, $flex: null, $wrap: null) {
     display: flex;
     justify-content: $justify;
@@ -28,7 +31,24 @@
 }
 
 
-@mixin hover($cursor: null, $filter: null, $color: null, $border: null, $transition: null) {
+@mixin input-field-and-textarea($width) {
+    @include width-and-height($width: $width);
+    @include font-size-and-weight($size: variables.$font-size-lg);
+    color: rgba(variables.$color-accent, 0.6);
+    border: 1.5px solid variables.$color-accent;
+    padding: 10px 10px 10px 10px;
+    font-family: 'Roboto Mono', monospace;
+    background-color: unset;
+    outline: none;
+
+
+    &::placeholder {
+        color: rgba(variables.$color-accent, 0.6);
+    }
+}
+
+
+@mixin hover($cursor: null, $filter: null, $color: null, $border: null, $weight: null, $transition: null) {
 
 
     &:hover {
@@ -36,6 +56,7 @@
         filter: $filter;
         color: $color;
         border: $border;
+        font-weight: $weight;
         transition: $transition;
     }
 }
