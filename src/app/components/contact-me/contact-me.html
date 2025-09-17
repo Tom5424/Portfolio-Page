@@ -28,26 +28,92 @@
     </div>
 
 
-    <form>
+    <form #contactForm="ngForm" (ngSubmit)="submitForm(contactForm)">
         <div class="form-group-wrapper">
             <div class="form-group">
-                <input type="text" placeholder="Your Name">
-                <input type="email" placeholder="Your Email">
+                <input type="text" placeholder="Your Name" name="name" required minlength="1" maxlength="25"
+                    autocomplete="off" #name="ngModel" [(ngModel)]="this.contactForm.name">
+
+
+                @if(name.touched && name.errors?.['required']) {
+                <div class="container-validation-messages name-position">
+                    <p class="error-message">Your name is required</p>
+                    <img src="/icons/exclamation-mark.svg" alt="">
+                </div>
+                }@else if(name.touched && name.valid){
+                <div class="container-validation-messages name-position">
+                    <p class="success-message">Name entered</p>
+                    <img src="/icons/check.svg" alt="">
+                </div>
+                }
+
+                <input type="email" placeholder="Your Email" name="email" required autocomplete="off"
+                    pattern="[A-Za-z0-9._]+@[A-Za-z0-9.]+[.][A-Za-z]{2,}" #email="ngModel"
+                    [(ngModel)]="this.contactForm.email">
+
+
+                @if(email.touched && email.errors?.['required']) {
+                <div class="container-validation-messages email-position">
+                    <p class="error-message">Your email is required</p>
+                    <img src="/icons/exclamation-mark.svg" alt="">
+                </div>
+                }@else if (email.touched && email.valid) {
+                <div class="container-validation-messages email-position">
+                    <p class="success-message">Valid Email entered</p>
+                    <img src="/icons/check.svg" alt="">
+                </div>
+                }
+
+
+                @if(email.touched && email.errors?.['pattern']) {
+                <div class="container-validation-messages email-position">
+                    <p class="error-message">Your email is invalid</p>
+                    <img src="/icons/exclamation-mark.svg" alt="">
+                </div>
+                }@else if (email.touched && email.valid) {
+                <div class="container-validation-messages email-position">
+                    <p class="success-message">Valid Email entered</p>
+                    <img src="/icons/check.svg" alt="">
+                </div>
+                }
             </div>
 
 
-            <textarea placeholder="Your Message"></textarea>
+            <textarea placeholder="Your Message" name="message" minlength="1" maxlength="250" required
+                autocomplete="off" #message="ngModel" [(ngModel)]="this.contactForm.message">
+            </textarea>
+
+
+            @if(message.touched && message.errors?.['required']) {
+            <div class="container-validation-messages message-position">
+                <p class="error-message">Your message is required</p>
+                <img src="/icons/exclamation-mark.svg" alt="">
+            </div>
+            }@else if (message.touched && message.valid) {
+            <div class="container-validation-messages message-position">
+                <p class="success-message">Message entered</p>
+                <img src="/icons/check.svg" alt="">
+            </div>
+            }
+
         </div>
 
 
         <label for="checkbox-privacy-policy">
-            <input type="checkbox" id="checkbox-privacy-policy">
+            <input type="checkbox" id="checkbox-privacy-policy" name="checkboxPrivacyPolicy" required
+                #checkboxPrivacyPolicy="ngModel" [(ngModel)]="this.contactForm.checkboxPrivacyPolicy">
+
             I have read the <a href="#">privacy-policy</a> and agree to the processing of my data as outlined.
+
+
+            @if (checkboxPrivacyPolicy.invalid && checkboxPrivacyPolicy.touched) {
+            <p class="error-message">Please accept the privacy policy.</p>
+            }
         </label>
 
 
         <div class="container-button">
-            <button type="submit">Send</button>
+            <button type="submit" [ngClass]="contactForm.invalid ? 'button-disable' : 'button-enable'">Send</button>
         </div>
     </form>
 </section>

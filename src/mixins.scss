@@ -34,7 +34,7 @@
 @mixin input-field-and-textarea($width) {
     @include width-and-height($width: $width);
     @include font-size-and-weight($size: variables.$font-size-lg);
-    color: rgba(variables.$color-accent, 0.6);
+    color: variables.$color-accent;
     border: 1.5px solid variables.$color-accent;
     padding: 10px 10px 10px 10px;
     font-family: 'Roboto Mono', monospace;

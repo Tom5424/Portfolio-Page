@@ -59,6 +59,7 @@ section {
 
 
 form {
+    @include mixins.position($position: relative);
     @include mixins.flex-box($flex: column);
     gap: variables.$gap-xxl;
 
@@ -67,6 +68,7 @@ form {
         @include mixins.font-size-and-weight($size: variables.$font-size-lg);
         @include mixins.hover($cursor: pointer);
         @include mixins.width-and-height($width: fit-content);
+        @include mixins.position($position: relative);
         color: variables.$color-accent;
 
 
@@ -74,6 +76,15 @@ form {
             @include mixins.hover($weight: 700, $transition: hover 125ms ease-in-out);
             color: variables.$color-primary;
             text-decoration: none;
+        }
+
+
+        p {
+            @include mixins.position($position: absolute, $top: 35px, $left: 300px);
+            @include mixins.font-size-and-weight($size: variables.$font-size-s);
+            margin: 0;
+            pointer-events: none;
+            text-align: center;
         }
     }
 }
@@ -107,11 +118,65 @@ form {
 
     button {
         @include mixins.font-size-and-weight($size: variables.$font-size-lg, $weight: variables.$font-weight-medium);
-        @include mixins.hover($cursor: not-allowed);
-        color: variables.$color-button-disabled;
-        border: 1px solid variables.$color-button-disabled;
         font-family: 'Roboto Mono', monospace;
         background-color: unset;
         padding: 15px 30px 15px 30px;
     }
+}
+
+
+.container-validation-messages {
+    @include mixins.position($position: absolute);
+    @include mixins.flex-box($align: center);
+    gap: variables.$gap-m;
+
+
+    p {
+        @include mixins.font-size-and-weight($size: variables.$font-size-s);
+        margin: 0;
+    }
+
+
+    img {
+        @include mixins.width-and-height($width: 20px, $height: 20px);
+    }
+
+
+    &.name-position {
+        @include mixins.position($top: 53px);
+    }
+
+
+    &.email-position {
+        @include mixins.position($top: 135px);
+    }
+
+
+    &.message-position {
+        @include mixins.position($top: 135px, $left: 562px);
+    }
+}
+
+
+.error-message {
+    color: variables.$color-error-message;
+}
+
+
+.success-message {
+    color: variables.$color-success-message;
+}
+
+
+.button-disable {
+    @include mixins.hover($cursor: not-allowed);
+    color: variables.$color-button-disabled;
+    border: 1px solid variables.$color-button-disabled;
+}
+
+
+.button-enable {
+    @include mixins.hover($cursor: pointer, $color: variables.$color-primary, $transition: hover 125ms ease-in-out);
+    color: variables.$color-accent;
+    border: 1px solid variables.$color-accent;
 }
