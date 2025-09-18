@@ -1,7 +1,8 @@
 import { NgClass } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { ValidationMessage } from '../validation-message/validation-message';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -13,12 +14,14 @@ import { ValidationMessage } from '../validation-message/validation-message';
 
 
 export class ContactMe {
-  contactForm: { name: string, email: string, message: string, checkboxPrivacyPolicy: boolean } = { name: '', email: '', message: '', checkboxPrivacyPolicy: false };
+  http: HttpClient = inject(HttpClient);
+  contactForm: { name: string, email: string, message: string, checkboxPrivacyPolicy?: boolean } = { name: '', email: '', message: '', checkboxPrivacyPolicy: false };
 
 
   submitForm(contactForm: NgForm): void {
     if (contactForm.valid) {
-      this.contactForm = contactForm.value;
+      this.contactForm = contactForm.form.value;
+      delete this.contactForm.checkboxPrivacyPolicy;
       contactForm.resetForm();
     }
   }
