@@ -1,0 +1,29 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+.container-validation-messages {
+    @include mixins.flex-box($align: center);
+    gap: variables.$gap-m;
+
+
+    p {
+        @include mixins.font-size-and-weight($size: variables.$font-size-s);
+        margin: 0;
+    }
+
+
+    img {
+        @include mixins.width-and-height($width: 20px, $height: 20px);
+    }
+}
+
+
+.error-message {
+    color: variables.$color-error-message;
+}
+
+
+.success-message {
+    color: variables.$color-success-message;
+}

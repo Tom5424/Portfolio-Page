@@ -72,19 +72,15 @@ form {
         color: variables.$color-accent;
 
 
+        input {
+            @include mixins.hover($cursor: pointer);
+        }
+
+
         a {
             @include mixins.hover($weight: 700, $transition: hover 125ms ease-in-out);
             color: variables.$color-primary;
             text-decoration: none;
-        }
-
-
-        p {
-            @include mixins.position($position: absolute, $top: 35px, $left: 300px);
-            @include mixins.font-size-and-weight($size: variables.$font-size-s);
-            margin: 0;
-            pointer-events: none;
-            text-align: center;
         }
     }
 }
@@ -125,21 +121,8 @@ form {
 }
 
 
-.container-validation-messages {
+.container-validation-message {
     @include mixins.position($position: absolute);
-    @include mixins.flex-box($align: center);
-    gap: variables.$gap-m;
-
-
-    p {
-        @include mixins.font-size-and-weight($size: variables.$font-size-s);
-        margin: 0;
-    }
-
-
-    img {
-        @include mixins.width-and-height($width: 20px, $height: 20px);
-    }
 
 
     &.name-position {
@@ -155,16 +138,11 @@ form {
     &.message-position {
         @include mixins.position($top: 135px, $left: 562px);
     }
-}
 
 
-.error-message {
-    color: variables.$color-error-message;
-}
-
-
-.success-message {
-    color: variables.$color-success-message;
+    &.privacy-policy-position {
+        @include mixins.position($top: 35px, $left: 300px);
+    }
 }
 
 

@@ -1,11 +1,12 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
+import { ValidationMessage } from '../validation-message/validation-message';
 
 
 @Component({
   selector: 'app-contact-me',
-  imports: [FormsModule, NgClass],
+  imports: [ValidationMessage, FormsModule, NgClass],
   templateUrl: './contact-me.html',
   styleUrl: './contact-me.scss'
 })
@@ -20,5 +21,20 @@ export class ContactMe {
       this.contactForm = contactForm.value;
       contactForm.resetForm();
     }
+  }
+
+
+  showValidationMessages(control: NgModel): boolean | null {
+    return control.touched && (control.valid || control.invalid)
+  }
+
+
+  formIsInvalid(contactForm: NgForm): boolean | null {
+    return contactForm.invalid;
+  }
+
+
+  getButtonDisableOrEnableClass(contactForm: NgForm): string {
+    return contactForm.invalid ? 'button-disable' : 'button-enable';
   }
 }
