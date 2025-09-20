@@ -1,0 +1,68 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+footer {
+    @include mixins.flex-box($align: center, $justify: space-between);
+    padding: 24px 140px 24px 140px;
+}
+
+
+.container-icon-and-jobtitle {
+    @include mixins.flex-box($flex: column, $align: center);
+    gap: variables.$gap-s;
+
+
+    img {
+        @include mixins.width-and-height($width: 55px, $height: 55px);
+    }
+
+
+    span {
+        @include mixins.font-size-and-weight($size: variables.$font-size-s, $weight: variables.$font-weight-medium);
+        color: variables.$color-primary;
+    }
+}
+
+
+.container-legal-notice-and-privacy-policy {
+    @include mixins.flex-box($flex: column, $align: center);
+    gap: variables.$gap-m;
+
+
+    p {
+        @include mixins.font-size-and-weight($size: variables.$font-size-xl);
+        color: variables.$color-primary;
+        margin: 0;
+    }
+
+
+    nav {
+        @include mixins.flex-box();
+        gap: variables.$font-size-xl;
+
+
+        a {
+            @include mixins.hover($color: variables.$color-accent, $weight: 700, $transition: hover 125ms ease-in-out);
+            @include mixins.active($text: underline);
+            color: variables.$color-primary;
+            text-decoration: none;
+        }
+    }
+}
+
+
+.container-icons {
+    @include mixins.flex-box();
+    gap: variables.$gap-m;
+
+
+    a {
+
+
+        img {
+            @include mixins.width-and-height($width: 30px, $height: 30px);
+            @include mixins.hover($filter: brightness(0) saturate(100%) invert(80%) sepia(34%) saturate(1664%) hue-rotate(105deg) brightness(96%) contrast(98%), $transition: hover 125ms ease-in-out);
+        }
+    }
+}
