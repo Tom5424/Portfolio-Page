@@ -18,7 +18,7 @@ export class Header implements OnInit {
     { 'name': 'Why me', 'href': 'why-me' },
     { 'name': 'Skills', 'href': 'my-skills' },
     { 'name': 'Projects', 'href': 'my-projects' },
-    { 'name': 'Contact', 'href': '' },
+    { 'name': 'Contact', 'href': 'contact-me' },
   ];
 
 
