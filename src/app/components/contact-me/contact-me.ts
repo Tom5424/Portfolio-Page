@@ -19,11 +19,26 @@ export class ContactMe {
 
 
   submitForm(contactForm: NgForm): void {
-    if (contactForm.valid) {
+    if (contactForm.form.valid) {
       this.contactForm = contactForm.form.value;
       delete this.contactForm.checkboxPrivacyPolicy;
-      contactForm.resetForm();
+      this.postData(contactForm);
     }
+  }
+
+
+  postData(contactForm: NgForm): void {
+    this.http.post('https://tom-petri.net/send-mail.php', JSON.stringify(this.contactForm), { headers: { 'Content-Type': 'text/plain' }, responseType: 'text' }).subscribe({
+      next: (response) => {
+        contactForm.resetForm();
+      },
+      error: (error) => {
+        console.error(error);
+      },
+      complete: () => {
+        console.log('Message send');
+      }
+    });
   }
 
 
