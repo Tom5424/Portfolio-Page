@@ -4,6 +4,8 @@
             <img src="/icons/favicon.png" alt="">
         </a>
 
+        
+        @if(!isOnLegalNoticeOrPrivacyPolicyPage()) {
         <ul>
 
             @for (navigationItem of navigationItems; track $index) {
@@ -16,6 +18,7 @@
             }
 
         </ul>
+        }
     </nav>
 
 

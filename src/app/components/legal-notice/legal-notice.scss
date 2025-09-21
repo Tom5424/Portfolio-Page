@@ -1,0 +1,58 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+.container-legal-notice {
+    @include mixins.flex-box($flex: column, $align: center);
+    gap: variables.$gap-lg;
+    padding: 0 0 1px 0;
+
+
+    h1 {
+        @include mixins.font-size-and-weight($size: variables.$font-size-xxxxl, $weight: variables.$font-weight-medium);
+        color: variables.$color-primary;
+        margin: 0;
+    }
+
+
+    section {
+        @include mixins.flex-box($flex: column, $align: center);
+        gap: variables.$gap-lg;
+
+
+        h2 {
+            @include mixins.font-size-and-weight($weight: variables.$font-weight-bold);
+            color: variables.$color-primary;
+            margin: 0;
+        }
+
+
+        address {
+            color: variables.$color-accent;
+            line-height: 1.25;
+            text-align: center;
+            font-style: normal;
+
+
+            a {
+                @include mixins.active($text: underline);
+                color: variables.$color-accent;
+                text-decoration: none;
+            }
+        }
+    }
+
+
+    footer {
+        @include mixins.flex-box($flex: column, $align: center);
+        color: variables.$color-accent;
+        gap: variables.$gap-lg;
+
+
+        a {
+            @include mixins.active($text: underline);
+            color: variables.$color-accent;
+            text-decoration: none;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, input, OnInit } from '@angular/core';
 import { ScrollSpyService } from '../../services/scroll-spy-service';
 import { RouterLink } from '@angular/router';
 
@@ -13,6 +13,7 @@ import { RouterLink } from '@angular/router';
 
 
 export class Header implements OnInit {
+  isOnLegalNoticeOrPrivacyPolicyPage = input<boolean>(false);
   scrollSpyService = inject(ScrollSpyService);
   navigationItems: { name: string, href: string }[] = [
     { 'name': 'Why me', 'href': 'why-me' },
