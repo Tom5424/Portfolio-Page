@@ -1,0 +1,97 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+.container-privacy-policy {
+    @include mixins.flex-box($flex: column, $align: center);
+    gap: variables.$gap-lg;
+    padding: 0 30px 0 30px;
+
+
+    h1 {
+        @include mixins.font-size-and-weight($size: variables.$font-size-xxxxl, $weight: variables.$font-weight-medium);
+        color: variables.$color-primary;
+        margin: 0;
+    }
+
+
+    section {
+        @include mixins.flex-box($flex: column, $align: center);
+        gap: variables.$gap-lg;
+
+
+        h2 {
+            @include mixins.font-size-and-weight($weight: variables.$font-weight-bold);
+            color: variables.$color-primary;
+            margin: 0;
+        }
+
+
+        h3 {
+            @include mixins.font-size-and-weight($weight: variables.$font-weight-bold);
+            color: variables.$color-primary;
+            margin: 0;
+        }
+
+
+        h4 {
+            @include mixins.font-size-and-weight($weight: variables.$font-weight-bold);
+            color: variables.$color-primary;
+            margin: 0;
+        }
+
+
+        p {
+            color: variables.$color-accent;
+            margin: 0;
+            text-align: center;
+        }
+
+
+        ul {
+            margin: 0;
+
+
+            li {
+                color: variables.$color-accent;
+                margin: 0;
+            }
+        }
+
+
+        address {
+            color: variables.$color-accent;
+            line-height: 1.25;
+            text-align: center;
+            font-style: normal;
+
+
+            a {
+                @include mixins.active($text: underline);
+                color: variables.$color-accent;
+                text-decoration: none;
+            }
+        }
+
+
+        a {
+            @include mixins.active($text: underline);
+            color: variables.$color-accent;
+            text-decoration: none;
+        }
+    }
+
+
+    footer {
+        @include mixins.flex-box($flex: column, $align: center);
+        color: variables.$color-accent;
+        gap: variables.$gap-s;
+
+
+        a {
+            @include mixins.active($text: underline);
+            color: variables.$color-accent;
+            text-decoration: none;
+        }
+    }
+}
