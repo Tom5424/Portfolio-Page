@@ -80,7 +80,7 @@
             <input type="checkbox" id="checkbox-privacy-policy" name="checkboxPrivacyPolicy" required
                 #checkboxPrivacyPolicy="ngModel" [(ngModel)]="this.contactForm.checkboxPrivacyPolicy">
 
-            I have read the <a href="#">privacy-policy</a> and agree to the processing of my data as outlined.
+            I have read the <a routerLink="/privacy-policy">privacy policy</a> and agree to the processing of my data as outlined.
 
 
             @if (showValidationMessages(checkboxPrivacyPolicy)) {

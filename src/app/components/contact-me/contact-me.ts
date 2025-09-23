@@ -3,11 +3,12 @@ import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { ValidationMessage } from '../validation-message/validation-message';
 import { HttpClient } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-contact-me',
-  imports: [ValidationMessage, FormsModule, NgClass],
+  imports: [ValidationMessage, FormsModule, NgClass, RouterLink],
   templateUrl: './contact-me.html',
   styleUrl: './contact-me.scss'
 })
