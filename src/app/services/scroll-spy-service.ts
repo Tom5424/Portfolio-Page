@@ -12,7 +12,6 @@ export class ScrollSpyService {
   activatedRoute: ActivatedRoute = inject(ActivatedRoute);
   viewportScroller: ViewportScroller = inject(ViewportScroller);
   activeSection: WritableSignal<string> = signal<string>('');
-  sectionOffsets: { [key: string]: number } = { 'why-me': 300, 'my-skills': 100, 'my-projects': 120, 'contact-me': 100 };
   activeLink: string = '';
 
 
@@ -26,12 +25,13 @@ export class ScrollSpyService {
   }
 
 
-  scrollToActiveSection(): void {
+  scrollToActiveSection(header: HTMLElement | undefined, additionallyOffset: number): void {
     this.activatedRoute.fragment.subscribe(fragment => {
-      if (fragment) {
-        this.activeLink = fragment;
-        const sectionOffset = this.sectionOffsets[fragment];
-        this.viewportScroller.setOffset([0, sectionOffset]);
+      if (fragment && header) {
+        Promise.resolve().then(() => this.activeLink = fragment);
+        const offsetY = header.offsetHeight - additionallyOffset;
+        this.viewportScroller.setOffset([0, offsetY]);
+        this.viewportScroller.scrollToAnchor(fragment);
       }
     });
   }
