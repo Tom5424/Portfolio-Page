@@ -5,7 +5,7 @@
         </a>
 
         
-        @if(!isOnLegalNoticeOrPrivacyPolicyPage()) {
+        @if(isOnHomePage()) {
         <ul>
 
             @for (navigationItem of navigationItems; track $index) {

@@ -15,7 +15,7 @@ import { Router, RouterLink } from '@angular/router';
 export class Header implements OnInit {
   router: Router = inject(Router)
   scrollSpyService = inject(ScrollSpyService);
-  isOnLegalNoticeOrPrivacyPolicyPage = input<boolean>(false);
+  isOnHomePage = input<boolean>(false);
   navigationItems: { name: string, href: string }[] = [
     { 'name': 'Why me', 'href': 'why-me' },
     { 'name': 'Skills', 'href': 'my-skills' },
@@ -41,7 +41,7 @@ export class Header implements OnInit {
 
 
   handleLogoClick(): void {
-    if (this.isOnLegalNoticeOrPrivacyPolicyPage()) {
+    if (!this.isOnHomePage()) {
       this.router.navigateByUrl('/');
     }
   }
