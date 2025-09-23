@@ -1,0 +1,23 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+.container-text {
+    @include mixins.flex-box($flex: column, $align: center);
+    gap: variables.$gap-lg;
+    padding: 156.3px 0 156.3px 0; 
+
+
+    h1 {
+        @include mixins.font-size-and-weight($size: variables.$font-size-xxxxl);
+        color: variables.$color-primary;
+        margin: 0;
+    }
+
+
+    p {
+        @include mixins.font-size-and-weight($size: variables.$font-size-lg);
+        color: variables.$color-accent;
+        margin: 0;
+    }
+}
