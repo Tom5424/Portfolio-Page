@@ -13,6 +13,7 @@ export class ScrollSpyService {
   viewportScroller: ViewportScroller = inject(ViewportScroller);
   activeSection: WritableSignal<string> = signal<string>('');
   activeLink: string = '';
+  headerHeight: number = 107;
 
 
   setActiveSection(section: string): void {
@@ -25,11 +26,11 @@ export class ScrollSpyService {
   }
 
 
-  scrollToActiveSection(header: HTMLElement | undefined, additionallyOffset: number): void {
+  scrollToActiveSection(additionallyOffset: number): void {
     this.activatedRoute.fragment.subscribe(fragment => {
-      if (fragment && header) {
-        Promise.resolve().then(() => this.activeLink = fragment);
-        const offsetY = header.offsetHeight - additionallyOffset;
+      if (fragment) {
+        Promise.resolve().then(() => this.activeLink = fragment); // Prevent the ExpressionChangedAfterItHasBeenCheckedError
+        const offsetY = this.headerHeight - additionallyOffset;
         this.viewportScroller.setOffset([0, offsetY]);
         this.viewportScroller.scrollToAnchor(fragment);
       }

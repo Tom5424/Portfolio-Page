@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, inject, input, viewChild } from '@angular/core';
+import { AfterViewInit, Component, inject, input } from '@angular/core';
 import { ScrollSpyService } from '../../services/scroll-spy-service';
 import { Router, RouterLink } from '@angular/router';
 
@@ -14,8 +14,7 @@ import { Router, RouterLink } from '@angular/router';
 
 export class Header implements AfterViewInit {
   router: Router = inject(Router);
-  scrollSpyService = inject(ScrollSpyService);
-  header = viewChild<ElementRef<HTMLElement>>('header');
+  scrollSpyService: ScrollSpyService = inject(ScrollSpyService);
   isOnHomePage = input<boolean>(false);
   navigationItems: { name: string, href: string }[] = [
     { 'name': 'Why me', 'href': 'why-me' },
@@ -26,12 +25,12 @@ export class Header implements AfterViewInit {
 
 
   ngAfterViewInit(): void {
-    this.scrollSpyService.scrollToActiveSection(this.header()?.nativeElement, 320);
+    this.scrollSpyService.scrollToActiveSection(25);
   }
 
 
   setActiveLink(selectedLink: string): void {
-    this.scrollSpyService.scrollToActiveSection(this.header()?.nativeElement, 25);
+    this.scrollSpyService.scrollToActiveSection(25);
     this.scrollSpyService.activeLink = selectedLink;
   }
 
