@@ -65,5 +65,12 @@
         "headline": "404 Page not found",
         "firstText": "The entered address don't exist!",
         "secondText": "Please check your input or go back to the previous Page."
+    },
+    "legalNotice": {
+        "headline": "Imprint",
+        "secondHeadline": "Information according to 5 TMG",
+        "contact": "Contact",
+        "source": "Source:",
+        "logoMadeBy": "Logo made by:"
     }
 }

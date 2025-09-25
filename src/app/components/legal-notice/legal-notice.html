@@ -2,11 +2,11 @@
 
 
 <div class="container-legal-notice">
-    <h1>Imprint</h1>
+    <h1>{{ 'legalNotice.headline' | translate }}</h1>
 
 
     <section>
-        <h2>Information according to 5 TMG</h2>
+        <h2>{{ 'legalNotice.secondHeadline' | translate }}</h2>
         <address>
             Tom Petri
             <br>
@@ -18,7 +18,7 @@
 
 
     <section>
-        <h2>Contact</h2>
+        <h2>{{ 'legalNotice.contact' | translate }}</h2>
         <address>
             E-Mail: <a href="mailto:tom.petri7@gmail.com">tom.petri7@gmail.com</a>
         </address>
@@ -26,8 +26,11 @@
 
 
     <footer>
-        Source: <a href="https://www.e-recht24.de" target="_blank">https://www.e-recht24.de</a>
-        Logo made by: <a href="https://logomakr.com/" target="_blank">https://logomakr.com</a>
+        {{ 'legalNotice.source' | translate }}
+        <a href="https://www.e-recht24.de" target="_blank">https://www.e-recht24.de</a>
+
+        {{ 'legalNotice.logoMadeBy' | translate }}
+        <a href="https://logomakr.com/" target="_blank">https://logomakr.com</a>
     </footer>
 </div>
 

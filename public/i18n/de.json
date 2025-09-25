@@ -65,5 +65,12 @@
         "headline": "404 Seite nicht gefunden",
         "firstText": "Die eingegebene Adresse existiert nicht!",
         "secondText": "Bitte überprüfen Sie Ihre Eingaben oder gehen Sie zurück zur vorherigen Seite."
+    },
+    "legalNotice": {
+        "headline": "Impressum",
+        "secondHeadline": "Angaben gemäß § 5 TMG",
+        "contact": "Kontakt",
+        "source": "Quelle:",
+        "logoMadeBy": "Logo erstellt von:"
     }
 }
