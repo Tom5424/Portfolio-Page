@@ -60,5 +60,10 @@
         "jobTitle": "fullstack entwickler",
         "legalNoticeLink": "Impressum",
         "privacyPolicyLink": "Datenschutzerklärung"
+    },
+    "pageNotFound": {
+        "headline": "404 Seite nicht gefunden",
+        "firstText": "Die eingegebene Adresse existiert nicht!",
+        "secondText": "Bitte überprüfen Sie Ihre Eingaben oder gehen Sie zurück zur vorherigen Seite."
     }
 }

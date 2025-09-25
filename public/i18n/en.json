@@ -60,5 +60,10 @@
         "jobTitle": "fullstack developer",
         "legalNoticeLink": "Legal notice",
         "privacyPolicyLink": "privacy policy"
+    },
+    "pageNotFound": {
+        "headline": "404 Page not found",
+        "firstText": "The entered address don't exist!",
+        "secondText": "Please check your input or go back to the previous Page."
     }
 }
