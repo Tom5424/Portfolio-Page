@@ -1,6 +1,6 @@
 <section>
     <div class="container-button-icon-and-image">
-        <a routerLink="/" fragment="contact-me">CONTACT ME</a>
+        <a routerLink="/" fragment="contact-me">{{ 'intro.contactMe' | translate }}</a>
         <a routerLink="/" fragment="why-me" (click)="scrollSpyService.scrollToActiveSection(25)">
             <img src="/icons/arrow-down.svg" alt="">
         </a>
@@ -9,7 +9,7 @@
 
 
     <div class="container-headlines">
-        <h1>Fullstack Developer</h1>
+        <h1>{{ 'intro.jobTitle' | translate }}</h1>
         <h2>Tom Petri</h2>
     </div>
 </section>

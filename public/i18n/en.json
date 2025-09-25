@@ -4,5 +4,9 @@
         "skills": "Skills",
         "projects": "Projects",
         "contact": "Contact"
+    },
+    "intro": {
+        "contactMe": "CONTACT ME",
+        "jobTitle": "FULLSTACK DEVELOPER"
     }
 }

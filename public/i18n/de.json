@@ -4,5 +4,9 @@
         "skills": "Fähigkeiten",
         "projects": "Projekte",
         "contact": "Kontakt"
+    },
+    "intro": {
+        "contactMe": "KONTAKTIERE MICH",
+        "jobTitle": "FULLSTACK ENTWICKLER"
     }
 }
