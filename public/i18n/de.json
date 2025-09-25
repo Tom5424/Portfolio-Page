@@ -18,5 +18,13 @@
         "headline": "Meine Fähigkeiten",
         "challengeMe": "Fordere mich heraus",
         "challengeMeText": "Ich freue mich immer, neue Technologien zu lernen. Sag mir einfach, was du brauchst."
+    },
+    "myProjects": {
+        "headline": "Meine Projekte",
+        "descriptionDABubble": "Ein Chat-Messenger-Klon wie Slack. Erstellen Sie Kanäle zu bestimmten Themen. Oder schreiben Sie Direktnachrichten an andere Benutzer.",
+        "descriptionJoin": "Ein Kanban-Board-Klon wie Jira. Aufgaben erstellen und organisieren. Aufgaben per Drag & Drop verschieben. Neue Kontakte erstellen und den Aufgaben zuordnen.",
+        "descriptionSharkie": "Ein Jump-and-Run-Spiel unter Wasser basierend auf objektorientierter Programmierung. Sammle Münzen und Giftflaschen. Kämpfe am Ende des Spiels gegen den großen Hai.",
+        "descriptionCoderr": "Eine einfache Variante der Plattform Fiverr. Erstellen Sie Angebote oder bearbeiten Sie Aufträge als Geschäftskunde. Erstellen Sie Bewertungen oder geben Sie Aufträge als Endkunde auf.",
+        "descriptionKanmind": "Ein Kanban-Board-Klon wie Trello. Erstellen, organisieren und verwalten Sie Aufgaben im Board. Verschieben Sie Aufgaben per Drag & Drop. Informationen zu Boards und Aufgaben erhalten Sie im Dashboard."
     }
 }
