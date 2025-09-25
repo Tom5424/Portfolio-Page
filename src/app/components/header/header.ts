@@ -51,9 +51,11 @@ export class Header implements AfterViewInit {
 
 
   selectLanguage(selectedLanguage: string): void {
-    this.translateService.activeLanguage = selectedLanguage;
-    this.translateService.saveLanguage(selectedLanguage);
-    this.translateService.useLanguage(selectedLanguage);
+    if (this.translateService.activeLanguage !== selectedLanguage) {
+      this.translateService.activeLanguage = selectedLanguage;
+      this.translateService.saveLanguage(selectedLanguage);
+      this.translateService.useLanguage(selectedLanguage);
+    }
   }
 
 
