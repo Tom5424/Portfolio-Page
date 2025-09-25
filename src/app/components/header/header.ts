@@ -1,27 +1,35 @@
 import { NgClass } from '@angular/common';
-import { AfterViewInit, Component, inject, input } from '@angular/core';
+import { AfterViewInit, Component, inject, input, OnInit } from '@angular/core';
 import { ScrollSpyService } from '../../services/scroll-spy-service';
 import { Router, RouterLink } from '@angular/router';
+import { TranslateServices } from '../../services/translate-service';
+import { TranslatePipe } from "@ngx-translate/core";
 
 
 @Component({
   selector: 'app-header',
-  imports: [NgClass, RouterLink],
+  imports: [NgClass, RouterLink, TranslatePipe],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
 
 
-export class Header implements AfterViewInit {
+export class Header implements OnInit, AfterViewInit {
   router: Router = inject(Router);
+  translateService: TranslateServices = inject(TranslateServices);
   scrollSpyService: ScrollSpyService = inject(ScrollSpyService);
   isOnHomePage = input<boolean>(false);
   navigationItems: { name: string, href: string }[] = [
-    { 'name': 'Why me', 'href': 'why-me' },
-    { 'name': 'Skills', 'href': 'my-skills' },
-    { 'name': 'Projects', 'href': 'my-projects' },
-    { 'name': 'Contact', 'href': 'contact-me' },
+    { 'name': 'header.whyMe', 'href': 'why-me' },
+    { 'name': 'header.skills', 'href': 'my-skills' },
+    { 'name': 'header.projects', 'href': 'my-projects' },
+    { 'name': 'header.contact', 'href': 'contact-me' },
   ];
+
+
+  ngOnInit(): void {
+    this.translateService.setLanguages();
+  }
 
 
   ngAfterViewInit(): void {
@@ -44,5 +52,16 @@ export class Header implements AfterViewInit {
     if (!this.isOnHomePage()) {
       this.router.navigateByUrl('/');
     }
+  }
+
+
+  selectLanguage(selectedLanguage: string): void {
+    this.translateService.activeLanguage = selectedLanguage;
+    this.translateService.useSelectedLanguage(selectedLanguage);
+  }
+
+
+  getActiveLanguageClass(selectedLanguage: string): string {
+    return this.translateService.activeLanguage === selectedLanguage ? 'active-language' : 'inactive-language';
   }
 }

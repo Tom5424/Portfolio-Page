@@ -2,6 +2,7 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChang
 import { provideRouter, withEnabledBlockingInitialNavigation, withInMemoryScrolling } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient, withFetch, withJsonpSupport } from '@angular/common/http';
+import { provideTranslateService } from '@ngx-translate/core';
 
 
 export const appConfig: ApplicationConfig = {
@@ -14,5 +15,6 @@ export const appConfig: ApplicationConfig = {
       withInMemoryScrolling({ anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled', })
     ),
     provideHttpClient(withFetch(), withJsonpSupport()),
+    provideTranslateService({ fallbackLang: 'en', lang: 'en' }),
   ]
 };
