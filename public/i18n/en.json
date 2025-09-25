@@ -13,5 +13,10 @@
         "headline": "Why me",
         "textAboutMe": "Hi, I'm Tom. I'm a certified full-stack developer with knowledge of Angular, TypeScript, Python, and Django. I enjoy programming because it gives me the opportunity to learn new technologies and approaches. I've already solved many problems in various projects, which I've really enjoyed.",
         "textLetsTalk": "Let's talk"
+    },
+    "mySkills": {
+        "headline": "My Skills",
+        "challengeMe": "Challenge me",
+        "challengeMeText": "I am always happy to learn new technologies, just tell me what you need."
     }
 }

@@ -13,5 +13,10 @@
         "headline": "Warum ich",
         "textAboutMe": "Hallo, ich bin Tom. Ich bin zertifizierter Full-Stack-Entwickler mit Kenntnissen in Angular, TypeScript, Python und Django. Programmieren macht mir Spaß, weil es mir die Möglichkeit gibt, neue Technologien und Ansätze kennenzulernen. Ich habe bereits viele Probleme in verschiedenen Projekten gelöst, was mir viel Spaß gemacht hat.",
         "textLetsTalk": "Lass uns reden"
+    },
+    "mySkills": {
+        "headline": "Meine Fähigkeiten",
+        "challengeMe": "Fordere mich heraus",
+        "challengeMeText": "Ich freue mich immer, neue Technologien zu lernen. Sag mir einfach, was du brauchst."
     }
 }

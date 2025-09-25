@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { ScrollSpyDirective } from '../../directives/scroll-spy-directive';
+import { TranslatePipe } from "@ngx-translate/core";
 
 
 @Component({
   selector: 'app-my-skills',
-  imports: [ScrollSpyDirective],
+  imports: [ScrollSpyDirective, TranslatePipe],
   templateUrl: './my-skills.html',
   styleUrl: './my-skills.scss'
 })
@@ -27,6 +28,6 @@ export class MySkills {
     { imgPath: '/icons/linux.svg', text: 'Linux', altText: 'Skill: Linux' },
     { imgPath: '/icons/postgresql.svg', text: 'Postgresql', altText: 'Skill: Postgresql' },
     { imgPath: '/icons/sql.svg', text: 'Sql', altText: 'Skill: Sql' },
-    { imgPath: '/icons/challenge-me.svg', text: 'Challenge me', altText: 'Challenge me' },
+    { imgPath: '/icons/challenge-me.svg', text: 'mySkills.challengeMe', altText: 'Challenge me' },
   ];
 }

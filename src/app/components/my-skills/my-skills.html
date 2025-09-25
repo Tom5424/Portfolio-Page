@@ -1,5 +1,5 @@
 <section id="my-skills" appScrollSpy>
-    <h2>My Skills</h2>
+    <h2>{{ 'mySkills.headline' | translate }}</h2>
 
 
     <ul>
@@ -7,10 +7,10 @@
         @for (skill of skills; track $index) {
         <li>
             <img [src]="skill.imgPath" [alt]="skill.altText">
-            <span>{{ skill.text }}</span>
+            <span>{{ skill.text | translate }}</span>
         </li>
         }
-        <p class="d-none">I am always happy to learn new technologies, just tell me what you need.</p>
+        <p class="d-none">{{ 'mySkills.challengeMeText' | translate }}</p>
 
     </ul>
 </section>
