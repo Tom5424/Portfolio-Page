@@ -55,5 +55,10 @@
             "endText": "gelesen und stimme der Verarbeitung meiner Daten zu."
         },
         "buttonText": "Senden"
+    },
+    "footer": {
+        "jobTitle": "fullstack entwickler",
+        "legalNoticeLink": "Impressum",
+        "privacyPolicyLink": "Datenschutzerklärung"
     }
 }

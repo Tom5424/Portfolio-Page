@@ -55,5 +55,10 @@
             "endText": "and agree to the processing of my data."
         },
         "buttonText": "Send"
+    },
+    "footer": {
+        "jobTitle": "fullstack developer",
+        "legalNoticeLink": "Legal notice",
+        "privacyPolicyLink": "privacy policy"
     }
 }
