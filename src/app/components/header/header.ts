@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { AfterViewInit, Component, inject, input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, inject, input } from '@angular/core';
 import { ScrollSpyService } from '../../services/scroll-spy-service';
 import { Router, RouterLink } from '@angular/router';
 import { TranslateServices } from '../../services/translate-service';
@@ -14,7 +14,7 @@ import { TranslatePipe } from "@ngx-translate/core";
 })
 
 
-export class Header implements OnInit, AfterViewInit {
+export class Header implements AfterViewInit {
   router: Router = inject(Router);
   translateService: TranslateServices = inject(TranslateServices);
   scrollSpyService: ScrollSpyService = inject(ScrollSpyService);
@@ -25,11 +25,6 @@ export class Header implements OnInit, AfterViewInit {
     { 'name': 'header.projects', 'href': 'my-projects' },
     { 'name': 'header.contact', 'href': 'contact-me' },
   ];
-
-
-  ngOnInit(): void {
-    this.translateService.setLanguages();
-  }
 
 
   ngAfterViewInit(): void {
@@ -57,7 +52,8 @@ export class Header implements OnInit, AfterViewInit {
 
   selectLanguage(selectedLanguage: string): void {
     this.translateService.activeLanguage = selectedLanguage;
-    this.translateService.useSelectedLanguage(selectedLanguage);
+    this.translateService.saveLanguage(selectedLanguage);
+    this.translateService.useLanguage(selectedLanguage);
   }
 
 

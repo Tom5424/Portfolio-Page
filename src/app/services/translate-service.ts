@@ -18,7 +18,6 @@ export class TranslateServices {
     this.translateService.addLangs(['de', 'en']);
     this.translateService.setFallbackLang('en');
     this.setTranslations();
-    this.setDefaultLanguage();
   }
 
 
@@ -28,12 +27,20 @@ export class TranslateServices {
   }
 
 
-  setDefaultLanguage(): void {
-    this.translateService.use(this.activeLanguage);
+  useLanguage(selectedLanguage: string): void {
+    this.translateService.use(selectedLanguage);
   }
 
 
-  useSelectedLanguage(selectedLanguage: string): void {
-    this.translateService.use(selectedLanguage);
+  saveLanguage(selectedLanguage: string): void {
+    localStorage.setItem('selectedLanguage', selectedLanguage);
+  }
+
+
+  loadLanguage(): void {
+    const language = localStorage.getItem('selectedLanguage');
+    if (language) {
+      this.activeLanguage = language;
+    }
   }
 }

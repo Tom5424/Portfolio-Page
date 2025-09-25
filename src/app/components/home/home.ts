@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Header } from '../header/header';
 import { Intro } from '../intro/intro';
 import { WhyMe } from '../why-me/why-me';
@@ -6,6 +6,7 @@ import { MySkills } from '../my-skills/my-skills';
 import { MyProjects } from '../my-projects/my-projects';
 import { ContactMe } from '../contact-me/contact-me';
 import { Footer } from '../footer/footer';
+import { TranslateServices } from '../../services/translate-service';
 
 
 @Component({
@@ -16,6 +17,13 @@ import { Footer } from '../footer/footer';
 })
 
 
-export class Home {
+export class Home implements OnInit {
+  translateService: TranslateServices = inject(TranslateServices);
 
+
+  ngOnInit(): void {
+    this.translateService.setLanguages();
+    this.translateService.loadLanguage();
+    this.translateService.useLanguage(this.translateService.activeLanguage);
+  }
 }
