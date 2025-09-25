@@ -4,11 +4,12 @@ import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { ValidationMessage } from '../validation-message/validation-message';
 import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
+import { TranslatePipe } from "@ngx-translate/core";
 
 
 @Component({
   selector: 'app-contact-me',
-  imports: [ValidationMessage, FormsModule, NgClass, RouterLink],
+  imports: [ValidationMessage, FormsModule, NgClass, RouterLink, TranslatePipe],
   templateUrl: './contact-me.html',
   styleUrl: './contact-me.scss'
 })

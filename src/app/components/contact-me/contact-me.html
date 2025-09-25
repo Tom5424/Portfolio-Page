@@ -2,15 +2,11 @@
     <div class="wrapper-container">
         <div class="container-headline-and-text">
             <h2>
-                Contact me
+                {{ 'contactMe.headline' | translate}}
                 <img src="/icons/curved-arrow-2.svg" alt="">
             </h2>
 
-            <p>
-                Encourage people to contact you and describe what role you are interested in. Express interest in
-                contributing
-                to a new project.
-            </p>
+            <p>{{ 'contactMe.text' | translate}}</p>
         </div>
 
 
@@ -31,8 +27,8 @@
     <form #contactForm="ngForm" (ngSubmit)="submitForm(contactForm)">
         <div class="form-group-wrapper">
             <div class="form-group">
-                <input type="text" placeholder="Your Name" name="name" required minlength="1" maxlength="25"
-                    autocomplete="off" #name="ngModel" [(ngModel)]="this.contactForm.name">
+                <input type="text" placeholder="{{ 'contactMe.placeholders.name' | translate }}" name="name" required
+                    minlength="1" maxlength="25" autocomplete="off" #name="ngModel" [(ngModel)]="this.contactForm.name">
 
 
                 @if (showValidationMessages(name)) {
@@ -44,8 +40,8 @@
                 }
 
 
-                <input type="email" placeholder="Your Email" name="email" required autocomplete="off"
-                    pattern="[A-Za-z0-9._]+@[A-Za-z0-9.]+[.][A-Za-z]{2,}" #email="ngModel"
+                <input type="email" placeholder="{{ 'contactMe.placeholders.email' | translate }}" name="email" required
+                    autocomplete="off" pattern="[A-Za-z0-9._]+@[A-Za-z0-9.]+[.][A-Za-z]{2,}" #email="ngModel"
                     [(ngModel)]="this.contactForm.email">
 
 
@@ -60,8 +56,8 @@
             </div>
 
 
-            <textarea placeholder="Your Message" name="message" minlength="1" maxlength="250" required
-                autocomplete="off" #message="ngModel" [(ngModel)]="this.contactForm.message">
+            <textarea placeholder="{{ 'contactMe.placeholders.message' | translate }}" name="message" minlength="1"
+                maxlength="250" required autocomplete="off" #message="ngModel" [(ngModel)]="this.contactForm.message">
             </textarea>
 
 
@@ -80,9 +76,13 @@
             <input type="checkbox" id="checkbox-privacy-policy" name="checkboxPrivacyPolicy" required
                 #checkboxPrivacyPolicy="ngModel" [(ngModel)]="this.contactForm.checkboxPrivacyPolicy">
 
-            I have read the <a routerLink="/privacy-policy">privacy policy</a> and agree to the processing of my data as outlined.
+            {{ 'contactMe.privacyPolicy.startText' | translate }}
 
+            <a routerLink="/privacy-policy">{{ 'contactMe.privacyPolicy.link' | translate }}</a>
 
+            {{ 'contactMe.privacyPolicy.endText' | translate }}
+
+            
             @if (showValidationMessages(checkboxPrivacyPolicy)) {
             <app-validation-message [ngModelControl]="checkboxPrivacyPolicy"
                 [errorMessages]="[{ messageType: 'required', text: 'Please accept the privacy policy' }]"
@@ -96,7 +96,7 @@
         <div class="container-button">
             <button type="submit" [disabled]="formIsInvalid(contactForm)"
                 [ngClass]="getButtonDisableOrEnableClass(contactForm)">
-                Send
+               {{ 'contactMe.buttonText' | translate }}
             </button>
         </div>
     </form>

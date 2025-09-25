@@ -26,5 +26,34 @@
         "descriptionSharkie": "Ein Jump-and-Run-Spiel unter Wasser basierend auf objektorientierter Programmierung. Sammle Münzen und Giftflaschen. Kämpfe am Ende des Spiels gegen den großen Hai.",
         "descriptionCoderr": "Eine einfache Variante der Plattform Fiverr. Erstellen Sie Angebote oder bearbeiten Sie Aufträge als Geschäftskunde. Erstellen Sie Bewertungen oder geben Sie Aufträge als Endkunde auf.",
         "descriptionKanmind": "Ein Kanban-Board-Klon wie Trello. Erstellen, organisieren und verwalten Sie Aufgaben im Board. Verschieben Sie Aufgaben per Drag & Drop. Informationen zu Boards und Aufgaben erhalten Sie im Dashboard."
+    },
+    "contactMe": {
+        "headline": "Kontaktiere mich",
+        "text": "Ich freue mich auf deine Kontaktaufnahme! Besonders die Rolle als Fullstack Entwickler interessiert mich. Die Möglichkeit, Projekte mitzugestalten und Ideen im Team umzusetzen, reizt mich.",
+        "placeholders": {
+            "name": "Dein Name",
+            "email": "Deine Email",
+            "message": "Deine Nachricht"
+        },
+        "successMessages": {
+            "name": "Name eingegeben",
+            "email": "Gültige E-Mail eingegeben",
+            "message": "Nachricht eingegeben"
+        },
+        "errorMessages": {
+            "name": "Dein Name ist erforderlich",
+            "email": {
+                "required": "Deine Email ist erforderlich",
+                "invalid": "Deine Email ist ungültig"
+            },
+            "message": "Deine Nachricht ist erforderlich",
+            "privacyPolicy": "Bitte akzeptiere die Datenschutzbestimmungen"
+        },
+        "privacyPolicy": {
+            "startText": "Ich habe die",
+            "link": "Datenschutzerklärung",
+            "endText": "gelesen und stimme der Verarbeitung meiner Daten zu."
+        },
+        "buttonText": "Senden"
     }
 }
