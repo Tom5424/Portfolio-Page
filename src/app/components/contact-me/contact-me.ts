@@ -18,6 +18,10 @@ import { TranslatePipe } from "@ngx-translate/core";
 export class ContactMe {
   http: HttpClient = inject(HttpClient);
   contactForm: { name: string, email: string, message: string, checkboxPrivacyPolicy?: boolean } = { name: '', email: '', message: '', checkboxPrivacyPolicy: false };
+  feedbackIsDisplay: boolean = false
+  isLoading: boolean = false;
+  emailStatusMessage: string = '';
+  messageColor: string = '';
 
 
   submitForm(contactForm: NgForm): void {
@@ -30,17 +34,43 @@ export class ContactMe {
 
 
   postData(contactForm: NgForm): void {
+    this.isLoading = true;
     this.http.post('https://tom-petri.net/send-mail.php', JSON.stringify(this.contactForm), { headers: { 'Content-Type': 'text/plain' }, responseType: 'text' }).subscribe({
       next: (response) => {
         contactForm.resetForm();
+        this.displayFeedbackMessageSuccess(true, 'Email successful sended');
       },
       error: (error) => {
-        console.error(error);
+        this.isLoading = false;
+        contactForm.resetForm();
+        this.displayFeedbackMessageError(true, 'Error sending email', error);
       },
       complete: () => {
-        console.log('Message send');
+        this.isLoading = false;
+        setTimeout(() => this.feedbackIsDisplay = false, 2500);
       }
     });
+  }
+
+
+  displayFeedbackMessageSuccess(feedbackIsDisplayd: boolean, feedbackMessage: string): void {
+    this.feedbackIsDisplay = feedbackIsDisplayd;
+    this.emailStatusMessage = feedbackMessage;
+    this.messageColor = this.getSuccessOrErrorMessageClass(true);
+  }
+
+
+  getSuccessOrErrorMessageClass(isSuccessful: boolean): string {
+    return isSuccessful ? 'success-message' : 'error-message';
+  }
+
+
+  displayFeedbackMessageError(feedbackIsDisplayd: boolean, feedbackMessage: string, error: any): void {
+    console.error(error);
+    this.feedbackIsDisplay = feedbackIsDisplayd;
+    this.emailStatusMessage = feedbackMessage;
+    this.messageColor = this.getSuccessOrErrorMessageClass(false);
+    setTimeout(() => this.feedbackIsDisplay = false, 2500);
   }
 
 

@@ -158,3 +158,39 @@ form {
     color: variables.$color-accent;
     border: 1px solid variables.$color-accent;
 }
+
+
+.container-feedback-message {
+    @include mixins.position($position: fixed, $top: 108px);
+    background-color: variables.$color-background;
+    border: 1px solid variables.$color-accent;
+    padding: 20px;
+
+
+    p {
+        @include mixins.font-size-and-weight($size: variables.$font-size-lg);
+        margin: 0;
+    }
+}
+
+
+.slide-in {
+    @include mixins.position($right: 5px);
+    transition: right 500ms ease-in-out;
+}
+
+
+.slide-out {
+    @include mixins.position($right: -500px);
+    transition: right 500ms ease-in-out;
+}
+
+
+.error-message {
+    color: variables.$color-error-message;
+}
+
+
+.success-message {
+    color: variables.$color-success-message;
+}
