@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { ScrollSpyDirective } from '../../directives/scroll-spy-directive';
 import { TranslatePipe } from "@ngx-translate/core";
+import { USALModule } from '@usal/angular';
 
 
 @Component({
   selector: 'app-my-skills',
-  imports: [ScrollSpyDirective, TranslatePipe],
+  imports: [ScrollSpyDirective, TranslatePipe, USALModule],
   templateUrl: './my-skills.html',
   styleUrl: './my-skills.scss'
 })

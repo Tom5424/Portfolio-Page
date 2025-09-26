@@ -6,6 +6,7 @@ section {
     @include mixins.flex-box($flex: column);
     gap: variables.$gap-m;
     padding: 24px 140px 24px 140px;
+    overflow-x: hidden;
 
 
     h2 {

@@ -3,7 +3,7 @@
 
 
     @for (project of projects; track $index) {
-    <article>
+    <article [usal]="$index % 2 === 0 ?  'fade-r-100 once duration-1000' : 'fade-l-100 once duration-1000'">
         <img [src]="project.imgPath" alt="">
 
 

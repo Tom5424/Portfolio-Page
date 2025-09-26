@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { USALModule } from '@usal/angular';
 
 
 @Component({
   selector: 'app-my-projects',
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, USALModule],
   templateUrl: './my-projects.html',
   styleUrl: './my-projects.scss'
 })

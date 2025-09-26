@@ -5,7 +5,8 @@
 section {
     @include mixins.flex-box();
     padding: 24px 140px 24px 140px;
-
+    overflow-x: hidden;
+    
 
     img:first-child {
         @include mixins.width-and-height($height: 320px);
