@@ -38,12 +38,12 @@ export class ContactMe {
     this.http.post('https://tom-petri.net/send-mail.php', JSON.stringify(this.contactForm), { headers: { 'Content-Type': 'text/plain' }, responseType: 'text' }).subscribe({
       next: (response) => {
         contactForm.resetForm();
-        this.displayFeedbackMessageSuccess(true, 'Email successful sended');
+        this.displayFeedbackMessageSuccess(true, 'contactMe.feedbackBoxMessages.success');
       },
       error: (error) => {
         this.isLoading = false;
         contactForm.resetForm();
-        this.displayFeedbackMessageError(true, 'Error sending email', error);
+        this.displayFeedbackMessageError(true, 'contactMe.feedbackBoxMessages.error', error);
       },
       complete: () => {
         this.isLoading = false;

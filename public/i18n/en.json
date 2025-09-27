@@ -54,7 +54,12 @@
             "link": "privacy policy",
             "endText": "and agree to the processing of my data."
         },
-        "buttonText": "Send"
+        "feedbackBoxMessages": {
+            "success": "Email successful sended",
+            "error": "Error sending email"
+        },
+        "buttonText": "Send",
+        "buttonTextSending": "Email is sent"
     },
     "footer": {
         "jobTitle": "fullstack developer",

@@ -25,7 +25,7 @@
 
 
     <div class="container-feedback-message" [ngClass]="feedbackIsDisplay ? 'slide-in' : 'slide-out'">
-        <p [ngClass]="messageColor">{{ emailStatusMessage }}</p>
+        <p [ngClass]="messageColor">{{ emailStatusMessage | translate }}</p>
     </div>
 
 
@@ -102,7 +102,7 @@
         <div class="container-button">
             <button type="submit" [disabled]="formIsInvalid(contactForm)"
                 [ngClass]="getButtonDisableOrEnableClass(contactForm)">
-                {{ isLoading ? 'Email is sent' : 'contactMe.buttonText' | translate }}
+                {{ isLoading ? ('contactMe.buttonTextSending' | translate) : ('contactMe.buttonText' | translate) }}
             </button>
         </div>
     </form>

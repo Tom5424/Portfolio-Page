@@ -54,7 +54,12 @@
             "link": "Datenschutzerklärung",
             "endText": "gelesen und stimme der Verarbeitung meiner Daten zu."
         },
-        "buttonText": "Senden"
+        "feedbackBoxMessages": {
+            "success": "E-Mail erfolgreich gesendet",
+            "error": "Fehler beim Senden der E-Mail"
+        },
+        "buttonText": "Senden",
+        "buttonTextSending": "E-Mail wird gesendet"
     },
     "footer": {
         "jobTitle": "fullstack entwickler",
