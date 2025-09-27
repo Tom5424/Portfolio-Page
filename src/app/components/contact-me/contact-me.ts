@@ -34,6 +34,7 @@ export class ContactMe {
 
 
   postData(contactForm: NgForm): void {
+    contactForm.form.controls['checkboxPrivacyPolicy'].markAsUntouched({ onlySelf: true }); // Prevents that the validation message from the checkbox are displayd after sending the email
     this.isLoading = true;
     this.http.post('https://tom-petri.net/send-mail.php', JSON.stringify(this.contactForm), { headers: { 'Content-Type': 'text/plain' }, responseType: 'text' }).subscribe({
       next: (response) => {
@@ -75,7 +76,7 @@ export class ContactMe {
 
 
   showValidationMessages(control: NgModel): boolean | null {
-    return control.touched && (control.valid || control.invalid)
+    return control.touched && (control.valid || control.invalid);
   }
 
 
