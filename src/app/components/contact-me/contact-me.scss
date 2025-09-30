@@ -93,6 +93,7 @@ form {
 
     textarea {
         @include mixins.input-field-and-textarea(660px);
+        resize: none;
     }
 }
 

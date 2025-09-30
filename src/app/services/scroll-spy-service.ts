@@ -1,5 +1,5 @@
 import { ViewportScroller } from '@angular/common';
-import { inject, Injectable, signal, WritableSignal } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -11,19 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 export class ScrollSpyService {
   activatedRoute: ActivatedRoute = inject(ActivatedRoute);
   viewportScroller: ViewportScroller = inject(ViewportScroller);
-  activeSection: WritableSignal<string> = signal<string>('');
   activeLink: string = '';
   headerHeight: number = 107;
-
-
-  setActiveSection(section: string): void {
-    this.activeSection.set(section);
-  }
-
-
-  clearActiveSection(): void {
-    this.activeSection.set('');
-  }
 
 
   scrollToActiveSection(additionallyOffset: number): void {
