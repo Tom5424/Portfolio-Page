@@ -33,7 +33,8 @@
         <div class="form-group-wrapper">
             <div class="form-group">
                 <input type="text" placeholder="{{ 'contactMe.placeholders.name' | translate }}" name="name" required
-                    minlength="1" maxlength="25" autocomplete="off" #name="ngModel" [(ngModel)]="this.contactForm.name">
+                    trimmedRequiredDirective minlength="1" maxlength="25" autocomplete="off" #name="ngModel"
+                    [(ngModel)]="this.contactForm.name">
 
 
                 @if (showValidationMessages(name)) {
@@ -63,7 +64,8 @@
 
 
             <textarea placeholder="{{ 'contactMe.placeholders.message' | translate }}" name="message" minlength="1"
-                maxlength="250" required autocomplete="off" #message="ngModel" [(ngModel)]="this.contactForm.message">
+                maxlength="250" trimmedRequiredDirective required autocomplete="off" #message="ngModel"
+                [(ngModel)]="this.contactForm.message">
             </textarea>
 
 

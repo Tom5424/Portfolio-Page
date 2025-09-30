@@ -5,11 +5,12 @@ import { ValidationMessage } from '../validation-message/validation-message';
 import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from "@ngx-translate/core";
+import { TrimmedRequiredDirective } from '../../directives/trimmed-required-directive';
 
 
 @Component({
   selector: 'app-contact-me',
-  imports: [ValidationMessage, FormsModule, NgClass, RouterLink, TranslatePipe],
+  imports: [ValidationMessage, FormsModule, NgClass, RouterLink, TranslatePipe, TrimmedRequiredDirective],
   templateUrl: './contact-me.html',
   styleUrl: './contact-me.scss'
 })
@@ -27,6 +28,8 @@ export class ContactMe {
   submitForm(contactForm: NgForm): void {
     if (contactForm.form.valid) {
       this.contactForm = contactForm.form.value;
+      this.contactForm.name = this.contactForm.name.trim();
+      this.contactForm.message = this.contactForm.message.trim();
       delete this.contactForm.checkboxPrivacyPolicy;
       this.postData(contactForm);
     }
@@ -57,12 +60,12 @@ export class ContactMe {
   displayFeedbackMessageSuccess(feedbackIsDisplayd: boolean, feedbackMessage: string): void {
     this.feedbackIsDisplay = feedbackIsDisplayd;
     this.emailStatusMessage = feedbackMessage;
-    this.messageColor = this.getSuccessOrErrorMessageClass(true);
+    this.getSuccessOrErrorMessageClass(true);
   }
 
 
-  getSuccessOrErrorMessageClass(isSuccessful: boolean): string {
-    return isSuccessful ? 'success-message' : 'error-message';
+  getSuccessOrErrorMessageClass(isSuccessful: boolean): void {
+    this.messageColor = isSuccessful ? 'success-message' : 'error-message';
   }
 
 
@@ -70,7 +73,7 @@ export class ContactMe {
     console.error(error);
     this.feedbackIsDisplay = feedbackIsDisplayd;
     this.emailStatusMessage = feedbackMessage;
-    this.messageColor = this.getSuccessOrErrorMessageClass(false);
+    this.getSuccessOrErrorMessageClass(false);
     setTimeout(() => this.feedbackIsDisplay = false, 2500);
   }
 
