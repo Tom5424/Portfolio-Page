@@ -1,0 +1,53 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+header {
+    @include mixins.flex-box($justify: space-between, $align: center);
+    @include mixins.position($position: sticky, $top: 0);
+    background: linear-gradient(variables.$color-background 50%, rgba(11, 4, 45, 0.2) 150%);
+    z-index: 1;
+    padding: 24px clamp(20px, 10vw, 140px);
+
+
+    a {
+
+
+        img {
+            @include mixins.width-and-height(55px, 55px);
+        }
+    }
+}
+
+
+.container-lines {
+    @include mixins.hover($cursor: pointer);
+    @include mixins.flex-box($flex: column);
+    gap: variables.$gap-s;
+
+
+    img {
+        @include mixins.width-and-height($width: 45px);
+        transition: transform 225ms ease-in-out;
+    }
+
+
+    &.rotate-lines {
+
+
+        img:nth-of-type(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+
+        img:nth-of-type(2) {
+            transform: scaleX(0);
+            transition: transform 225ms ease-in-out;
+        }
+
+
+        img:nth-of-type(3) {
+            transform: rotate(-45deg) translate(10px, -10px);
+        }
+    }
+}

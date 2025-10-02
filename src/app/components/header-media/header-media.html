@@ -1,0 +1,12 @@
+<header>
+    <a href="#top" (click)="handleLogoClick()">
+        <img src="/icons/favicon.png" alt="">
+    </a>
+
+
+    <div class="container-lines" (click)="toggleMenu()" [ngClass]="{'rotate-lines': menuIsOpen}">
+        <img src="/icons/horizontal-line.svg" alt="">
+        <img src="/icons/horizontal-line.svg" alt="">
+        <img src="/icons/horizontal-line.svg" alt="">
+    </div>
+</header>

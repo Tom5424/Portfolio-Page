@@ -1,4 +1,8 @@
+@if(isOnMobileView()) {
+<app-header-media [isOnHomePage]="true"></app-header-media>
+}@else {
 <app-header [isOnHomePage]="true"></app-header>
+}
 <app-intro></app-intro>
 <app-why-me></app-why-me>
 <app-my-skills></app-my-skills>
