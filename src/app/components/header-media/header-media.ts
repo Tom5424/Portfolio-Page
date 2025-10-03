@@ -1,11 +1,10 @@
-import { NgClass } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-header-media',
-  imports: [NgClass],
+  imports: [],
   templateUrl: './header-media.html',
   styleUrl: './header-media.scss'
 })

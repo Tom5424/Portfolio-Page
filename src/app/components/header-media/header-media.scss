@@ -28,26 +28,5 @@ header {
 
     img {
         @include mixins.width-and-height($width: 45px);
-        transition: transform 225ms ease-in-out;
-    }
-
-
-    &.rotate-lines {
-
-
-        img:nth-of-type(1) {
-            transform: rotate(45deg) translate(10px, 10px);
-        }
-
-
-        img:nth-of-type(2) {
-            transform: scaleX(0);
-            transition: transform 225ms ease-in-out;
-        }
-
-
-        img:nth-of-type(3) {
-            transform: rotate(-45deg) translate(10px, -10px);
-        }
     }
 }
