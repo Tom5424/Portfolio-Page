@@ -1,0 +1,33 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+@media screen and (hover: none) and (pointer: coarse) {
+
+    header {
+
+
+        nav {
+
+
+            ul {
+
+
+                li {
+
+
+                    a {
+                        @include mixins.hover($color: variables.$color-primary);
+                        @include mixins.active($color: variables.$color-accent, $text: underline, $transition: hover 125ms ease-in-out);
+                    }
+                }
+            }
+        }
+    }
+
+
+    .inactive-language {
+        @include mixins.hover($color: variables.$color-primary, $transition: hover 125ms ease-in-out);
+        @include mixins.active($color: variables.$color-accent, $transition: hover 125ms ease-in-out);
+    }
+}

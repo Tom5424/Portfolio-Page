@@ -10,7 +10,7 @@ import { TranslatePipe } from "@ngx-translate/core";
   selector: 'app-header',
   imports: [NgClass, RouterLink, TranslatePipe],
   templateUrl: './header.html',
-  styleUrl: './header.scss'
+  styleUrls: ['./header.scss', './header-media.scss']
 })
 
 
