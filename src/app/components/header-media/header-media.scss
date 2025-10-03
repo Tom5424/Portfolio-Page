@@ -30,3 +30,94 @@ header {
         @include mixins.width-and-height($width: 45px);
     }
 }
+
+
+.container-menu {
+    @include mixins.position($position: fixed, $top: 0, $right: 0, $left: 0);
+    background: linear-gradient(#000033, #000066);
+    padding: 20px 20px 40px 20px;
+    z-index: 1;
+
+
+    nav {
+        @include mixins.flex-box($flex: column, $align: center);
+        gap: variables.$gap-xxxl;
+
+
+        ul {
+            @include mixins.flex-box($flex: column, $align: center);
+            gap: variables.$gap-xxxl;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+
+            li {
+
+
+                a {
+                    @include mixins.active($text: underline, $color: variables.$color-accent, $transition: hover 125ms ease-in-out);
+                    @include mixins.hover($cursor: unset);
+                    @include mixins.font-size-and-weight(variables.$font-size-lg, variables.$font-weight-medium);
+                    color: variables.$color-primary;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+
+.container-close-icon {
+    @include mixins.flex-box($justify: flex-end);
+}
+
+
+.container-switch-languages {
+    @include mixins.flex-box($align: center);
+    gap: variables.$gap-xxs;
+
+
+    p {
+        @include mixins.font-size-and-weight(variables.$font-size-lg, variables.$font-weight-bold);
+        margin: 0;
+    }
+
+
+    hr {
+        @include mixins.width-and-height(3px, 22px);
+        background-color: variables.$color-primary;
+        margin: 0;
+        border: unset;
+    }
+}
+
+
+.active-link {
+    color: variables.$color-accent !important;
+    text-decoration: underline !important;
+}
+
+
+.inactive-language {
+    @include mixins.active($color: variables.$color-accent, $transition: hover 125ms ease-in-out);
+    color: variables.$color-primary;
+}
+
+
+.active-language {
+    @include mixins.hover($cursor: unset);
+    color: variables.$color-accent;
+}
+
+
+.slide-in {
+    translate: 0 0;
+    transition: translate 500ms ease-in-out;
+}
+
+
+.slide-out {
+    translate: 1500px 0;
+    transition: translate 500ms ease-in-out;
+}

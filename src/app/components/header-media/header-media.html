@@ -4,9 +4,39 @@
     </a>
 
 
-    <div class="container-lines" (click)="toggleMenu()">
+    <div class="container-lines" (click)="openMenu()">
         <img src="/icons/horizontal-line.svg" alt="">
         <img src="/icons/horizontal-line.svg" alt="">
         <img src="/icons/horizontal-line.svg" alt="">
     </div>
 </header>
+
+
+<div class="container-menu" [ngClass]="menuIsOpen ? 'slide-in' : 'slide-out'">
+    <div class="container-close-icon" (click)="closeMenu()">
+        <img src="/icons/close.svg" alt="">
+    </div>
+
+
+    <nav>
+        <ul>
+
+            @for (navigationItem of navigationItems; track $index) {
+            <li>
+                <a routerLink="/" [fragment]="navigationItem.href" (click)="setActiveLink(navigationItem.href)"
+                    [ngClass]="getActiveLinkClass(navigationItem.href)">
+                    {{ navigationItem.name | translate }}
+                </a>
+            </li>
+            }
+
+        </ul>
+
+
+        <div class="container-switch-languages">
+            <p (click)="selectLanguage('de')" [ngClass]="getActiveLanguageClass('de')">DE</p>
+            <hr>
+            <p (click)="selectLanguage('en')" [ngClass]="getActiveLanguageClass('en')">EN</p>
+        </div>
+    </nav>
+</div>
