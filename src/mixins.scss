@@ -62,12 +62,14 @@
 }
 
 
-@mixin active($transition: null, $color: null, $text: null) {
+@mixin active($transition: null, $color: null, $text: null, $border: null, $filter: null) {
 
 
     &:active {
+        filter: $filter;
         transition: $transition;
         color: $color;
         text-decoration: $text;
+        border: $border;
     }
 }

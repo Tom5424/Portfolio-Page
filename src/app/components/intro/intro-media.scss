@@ -1,0 +1,99 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+@media screen and (max-width: 1286px) {
+
+
+    section {
+        @include mixins.flex-box($flex: column);
+        gap: variables.$gap-xs;
+    }
+
+
+    .container-button-icon-and-image {
+        @include mixins.flex-box($justify: center);
+        margin-top: -25px;
+
+
+        a:first-child {
+            display: none;
+        }
+
+
+        a:nth-child(2) {
+            display: none;
+        }
+    }
+
+
+    .container-headlines {
+        @include mixins.flex-box($align: center);
+        margin-top: 0;
+    }
+}
+
+
+@media screen and (max-width: 890px) {
+
+
+    section {
+        padding: 0 clamp(20px, 10vw, 140px) 24px;
+    }
+}
+
+
+@media screen and (max-width: 770px) {
+
+
+    section {
+        @include mixins.width-and-height($height: 80vh);
+        @include mixins.flex-box($justify: center);
+        gap: variables.$gap-xl;
+    }
+
+
+    .container-button-icon-and-image {
+
+
+        >img:last-of-type {
+            @include mixins.width-and-height($width: clamp(200px, 36vh, 320px), $height: auto);
+        }
+    }
+
+
+    .container-headlines {
+
+
+        h1 {
+            @include mixins.font-size-and-weight($size: clamp(1.5rem, 6vw, 3.375rem));
+            text-align: center;
+        }
+
+
+        h2 {
+            @include mixins.font-size-and-weight($size: clamp(2.5rem, 10vw, 5.125rem));
+            text-align: center;
+        }
+    }
+}
+
+
+@media screen and (hover: none) and (pointer: coarse) {
+
+
+    .container-button-icon-and-image {
+
+
+        a:first-child {
+            @include mixins.hover($color: variables.$color-primary);
+            @include mixins.active($color: variables.$color-accent, $transition: hover 125ms ease-in-out);
+        }
+
+
+        a:nth-child(2) {
+            @include mixins.hover($filter: unset, $border: unset);
+            @include mixins.active($filter: brightness(0) saturate(100%) invert(80%) sepia(34%) saturate(1664%) hue-rotate(105deg) brightness(96%) contrast(98%), $border: 1px solid variables.$color-accent, $transition: active 125ms ease-in-out);
+        }
+    }
+}

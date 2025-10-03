@@ -8,7 +8,7 @@ import { TranslatePipe } from "@ngx-translate/core";
   selector: 'app-intro',
   imports: [RouterLink, TranslatePipe],
   templateUrl: './intro.html',
-  styleUrl: './intro.scss'
+  styleUrls: ['./intro.scss', 'intro-media.scss']
 })
 
 

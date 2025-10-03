@@ -3,7 +3,7 @@
 
 
 section {
-    padding: 24px 140px 24px 140px;
+    padding: 0 140px 24px 140px;
 }
 
 
@@ -17,8 +17,9 @@ section {
         color: variables.$color-primary;
         border: 1px solid variables.$color-accent;
         padding: 15px 30px 15px 30px;
-        margin-left: -48px;
+        margin-top: 260px;
         transform: rotate(-90deg);
+        transform-origin: top left;
         text-decoration: none;
         background-color: unset;
     }
