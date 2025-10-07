@@ -1,0 +1,78 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+@media screen and (min-width: 1600px) {
+
+
+    .container-text-about-self {
+
+
+        p {
+            @include mixins.font-size-and-weight($size: variables.$font-size-lg);
+        }
+    }
+}
+
+
+@media screen and (max-width: 1286px) {
+
+
+    section {
+        padding: 24px clamp(20px, 10vw, 140px) 24px;
+
+
+        img:first-child {
+            display: none;
+        }
+    }
+
+
+    .container-text-about-self {
+        @include mixins.flex-box($align: center);
+
+
+        p {
+            text-align: center;
+        }
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+
+
+    .container-text-about-self {
+
+
+        h2 {
+            @include mixins.font-size-and-weight($size: clamp(2rem, 8vw, 3.375rem));
+        }
+
+
+        p {
+            @include mixins.width-and-height($width: unset);
+            line-height: 160%;
+            hyphens: auto;
+        }
+
+
+        a {
+            @include mixins.font-size-and-weight($size: clamp(1rem, 2.5vw, 1.125rem));
+        }
+    }
+}
+
+
+@media screen and (hover: none) and (pointer: coarse) {
+
+
+    .container-text-about-self {
+
+
+        a {
+            @include mixins.hover($color: variables.$color-text-link);
+            @include mixins.active($color: variables.$color-primary, $transition: hover 125ms ease-in-out);
+        }
+    }
+}

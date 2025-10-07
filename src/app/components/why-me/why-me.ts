@@ -8,7 +8,7 @@ import { USALModule } from '@usal/angular';
   selector: 'app-why-me',
   imports: [RouterLink, TranslatePipe, USALModule],
   templateUrl: './why-me.html',
-  styleUrl: './why-me.scss'
+  styleUrls: ['./why-me.scss', './why-me-media.scss']
 })
 
 
