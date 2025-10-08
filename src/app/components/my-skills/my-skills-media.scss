@@ -1,0 +1,56 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+@media screen and (max-width: 1286px) {
+
+
+    section {
+        padding: 24px clamp(20px, 10vw, 140px) 24px;
+    }
+}
+
+
+@media screen and (max-width: 1135px) {
+
+
+    section {
+
+
+        h2 {
+            text-align: center;
+        }
+
+
+        ul {
+            @include mixins.flex-box($justify: center);
+            gap: clamp(5rem, 8.5vw, 6.25rem);
+        }
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+
+
+    section {
+
+
+        h2 {
+            font-size: clamp(2rem, 8vw, 3.375rem);
+        }
+
+
+        ul {
+
+
+            li {
+
+
+                span {
+                    font-size: clamp(1rem, 2.7vw, 1.125rem);
+                }
+            }
+        }
+    }
+}

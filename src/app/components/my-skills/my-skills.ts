@@ -7,7 +7,7 @@ import { USALModule } from '@usal/angular';
   selector: 'app-my-skills',
   imports: [TranslatePipe, USALModule],
   templateUrl: './my-skills.html',
-  styleUrl: './my-skills.scss'
+  styleUrls: ['./my-skills.scss', './my-skills-media.scss']
 })
 
 
