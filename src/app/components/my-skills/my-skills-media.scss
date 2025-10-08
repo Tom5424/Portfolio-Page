@@ -51,6 +51,15 @@
                     font-size: clamp(1rem, 2.7vw, 1.125rem);
                 }
             }
+
+
+            li:last-of-type {
+
+
+                &::before {
+                    font-size: clamp(1rem, 2.7vw, 1.125rem);
+                }
+            }
         }
     }
 }

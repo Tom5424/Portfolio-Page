@@ -43,19 +43,25 @@ section {
 
 
         li:last-of-type {
+            @include mixins.position($position: relative);
 
 
-            &:hover+p {
-                display: flex;
+            &::before {
+                @include mixins.font-size-and-weight($size: variables.$font-size-lg);
+                @include mixins.position($position: absolute, $bottom: 110%);
+                color: variables.$color-accent;
+                background-color: variables.$color-background;
+                border: 1px solid variables.$color-accent;
+                padding: 10px;
+                content: attr(data-tooltip);
+                text-align: center;
+                display: none;
             }
-        }
 
 
-        p {
-            @include mixins.font-size-and-weight($size: variables.$font-size-lg);
-            @include mixins.width-and-height($width: 30%);
-            color: variables.$color-accent;
-            margin: 0;
+            &:hover::before {
+                @include mixins.flex-box();
+            }
         }
     }
 }
