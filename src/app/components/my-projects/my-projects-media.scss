@@ -1,0 +1,151 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+@media screen and (max-width: 1286px) {
+
+
+    section {
+        padding: 24px clamp(20px, 10vw, 140px) 24px;
+    }
+
+
+    article {
+        @include mixins.flex-box($flex: column-reverse, $align: center);
+
+
+        &:nth-of-type(even) {
+            @include mixins.flex-box($flex: column-reverse, $align: center);
+
+
+            .container-project-description {
+                @include mixins.flex-box($align: center);
+
+
+                p {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+
+    .container-project-description {
+        @include mixins.flex-box($align: center);
+        gap: variables.$gap-lg;
+
+
+        p {
+            text-align: center;
+        }
+    }
+
+
+    .container-links {
+        display: none;
+
+
+        &.mobile {
+            @include mixins.flex-box();
+        }
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+
+
+    article {
+
+
+        img {
+            @include mixins.width-and-height($width: clamp(16rem, 91vw, 40.625rem));
+            height: auto;
+        }
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+
+
+    section {
+
+
+        h2 {
+            @include mixins.font-size-and-weight($size: clamp(2rem, 8vw, 3.375rem));
+        }
+
+    }
+
+
+    .container-project-description {
+
+
+        h3 {
+            @include mixins.font-size-and-weight($size: clamp(1.5rem, 7vw, 3rem));
+            text-align: center;
+        }
+
+
+        p {
+            @include mixins.width-and-height($width: unset);
+            @include mixins.font-size-and-weight($size: clamp(1rem, 2.7vw, 1.125rem));
+            line-height: 160%;
+        }
+    }
+
+
+    .container-links {
+
+
+        a {
+            @include mixins.font-size-and-weight($size: clamp(1rem, 2.7vw, 1.125rem));
+        }
+    }
+}
+
+
+@media screen and (max-width: 365px) {
+
+
+    .container-links {
+
+
+        &.mobile {
+            @include mixins.flex-box($flex: column, $align: center);
+        }
+    }
+}
+
+
+@media screen and (hover: none), (pointer: coarse) {
+
+
+    .container-links {
+
+
+        a:first-child {
+            @include mixins.hover($color: variables.$color-primary, $transition: hover 125ms ease-in-out);
+        }
+
+
+        a:last-child {
+            @include mixins.hover($color: variables.$color-text-link, $transition: hover 125ms ease-in-out);
+        }
+
+
+        &.mobile {
+
+
+            a:first-child {
+                @include mixins.hover($color: variables.$color-primary, $transition: hover 125ms ease-in-out);
+            }
+
+
+            a:last-child {
+                @include mixins.hover($color: variables.$color-text-link, $transition: hover 125ms ease-in-out);
+            }
+        }
+    }
+}

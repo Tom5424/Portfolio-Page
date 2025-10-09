@@ -19,12 +19,12 @@ section {
 
 
 article {
-    @include mixins.flex-box($align: center);
+    @include mixins.flex-box($align: flex-start);
     gap: variables.$gap-xxl;
 
 
     img {
-        @include mixins.width-and-height($width: 600px, $height: 320px);
+        @include mixins.width-and-height($width: 650px, $height: 350px);
     }
 
 
@@ -88,5 +88,15 @@ article {
         @include mixins.hover($color: variables.$color-primary, $transition: hover 125ms ease-in-out);
         background-color: variables.$color-accent;
         color: variables.$color-text-link;
+    }
+}
+
+
+.container-links {
+
+
+    &.mobile {
+        @include mixins.flex-box($justify: center);
+        display: none;
     }
 }
