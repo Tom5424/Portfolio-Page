@@ -49,7 +49,6 @@
 
 
         label {
-            @include mixins.width-and-height($width: 80%);
             text-align: center;
         }
     }
@@ -84,9 +83,15 @@
 
 
         &.privacy-policy-position {
-            @include mixins.position($top: 48px, $left: 0, $right: 0);
+            @include mixins.position($top: unset, $left: 0, $right: 0);
             @include mixins.flex-box($justify: center);
+            margin: clamp(0.5rem, 1.5vw, 1.5rem) 0 0 0;
         }
+    }
+
+
+    .container-button {
+        margin: 25px 0 0 0;
     }
 
 
@@ -154,8 +159,7 @@
         label {
             @include mixins.font-size-and-weight($size: clamp(1rem, 2.7vw, 1.125rem));
             @include mixins.width-and-height($width: unset);
-            line-height: 160%;
-            text-align: center;
+            line-height: 140%;
         }
     }
 
@@ -176,31 +180,6 @@
             @include mixins.font-size-and-weight($size: clamp(1rem, 2.7vw, 1.125rem));
         }
     }
-
-
-    // .container-validation-message {
-
-
-    //     &.name-position {
-    //         @include mixins.font-size-and-weight($size: clamp(0.75rem, 2.7vw, 0.875rem));
-    //         // @include mixins.position($top: 53px);
-    //     }
-
-
-    //     &.email-position {
-    //         // @include mixins.position($top: 135px);
-    //     }
-
-
-    //     &.message-position {
-    //         // @include mixins.position($top: 135px, $left: 562px);
-    //     }
-
-
-    //     &.privacy-policy-position {
-    //         // @include mixins.position($top: 35px, $left: 300px);
-    //     }
-    // }
 
 
     .container-button {

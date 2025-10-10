@@ -6,7 +6,7 @@ import { NgModel } from '@angular/forms';
   selector: 'app-validation-message',
   imports: [],
   templateUrl: './validation-message.html',
-  styleUrl: './validation-message.scss'
+  styleUrls: ['./validation-message.scss', './validation-message-media.scss']
 })
 
 

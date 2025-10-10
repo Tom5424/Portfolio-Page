@@ -1,0 +1,16 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+@media screen and (max-width: 700px) {
+
+
+    .container-validation-messages {
+        gap: clamp(variables.$gap-s, 2.5vw, variables.$gap-m);
+
+
+        p {
+            @include mixins.font-size-and-weight($size: clamp(0.75rem, 2vw, 0.875rem));
+        }
+    }
+}
