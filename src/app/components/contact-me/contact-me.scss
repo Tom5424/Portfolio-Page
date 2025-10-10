@@ -166,12 +166,14 @@ form {
     @include mixins.position($position: fixed, $top: 108px);
     background-color: variables.$color-background;
     border: 1px solid variables.$color-accent;
+    z-index: 1;
     padding: 20px;
 
 
     p {
         @include mixins.font-size-and-weight($size: variables.$font-size-lg);
         margin: 0;
+        text-align: center;
     }
 }
 

@@ -153,6 +153,15 @@
     }
 
 
+    .container-feedback-message {
+
+
+        p {
+            @include mixins.font-size-and-weight($size: clamp(1rem, 2.7vw, 1.125rem));
+        }
+    }
+
+
     form {
 
 
@@ -203,7 +212,8 @@
 }
 
 
-@media screen and (hover: none), (pointer: coarse) {
+@media screen and (hover: none),
+(pointer: coarse) {
 
 
     .wrapper-container {
