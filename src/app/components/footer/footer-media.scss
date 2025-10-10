@@ -1,0 +1,121 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+@media screen and (min-width: 1600px) {
+
+
+    .container-icon-and-jobtitle {
+
+
+        span {
+            @include mixins.font-size-and-weight($size: variables.$font-size-lg);
+        }
+    }
+
+
+    .container-legal-notice-and-privacy-policy {
+
+
+        nav {
+
+
+            a {
+                @include mixins.font-size-and-weight($size: variables.$font-size-lg);
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1286px) {
+
+
+    footer {
+        padding: 24px clamp(20px, 10vw, 140px) 24px;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+
+
+    footer {
+        @include mixins.flex-box($flex: column);
+        gap: variables.$gap-s;
+    }
+
+
+    .container-icon-and-jobtitle {
+
+
+        span {
+            display: none;
+        }
+    }
+
+
+    .container-legal-notice-and-privacy-policy {
+
+
+        nav {
+            @include mixins.flex-box($flex: column, $align: center);
+            gap: variables.$gap-s;
+        }
+    }
+
+
+    .container-icons {
+        display: none;
+
+
+        &.mobile {
+            @include mixins.flex-box();
+        }
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+
+
+    .container-legal-notice-and-privacy-policy {
+
+
+        p {
+            @include mixins.font-size-and-weight($size: clamp(1.125rem, 3vw, 1.375rem));
+        }
+    }
+}
+
+
+@media screen and (hover: none), (pointer: coarse) {
+
+
+    .container-legal-notice-and-privacy-policy {
+
+
+        nav {
+
+
+            a {
+                @include mixins.hover($color: variables.$color-primary, $transition: hover 125ms ease-in-out);
+                @include mixins.active($color: variables.$color-accent, $transition: hover 125ms ease-in-out, $text: underline);
+            }
+        }
+    }
+
+
+    .container-icons {
+
+
+        a {
+
+
+            img {
+                @include mixins.hover($filter: unset, $transition: hover 125ms ease-in-out);
+                @include mixins.active($filter: brightness(0) saturate(100%) invert(80%) sepia(34%) saturate(1664%) hue-rotate(105deg) brightness(96%) contrast(98%), $transition: hover 125ms ease-in-out);
+            }
+        }
+    }
+}

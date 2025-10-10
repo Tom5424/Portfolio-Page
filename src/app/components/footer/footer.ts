@@ -7,7 +7,7 @@ import { TranslatePipe } from "@ngx-translate/core";
   selector: 'app-footer',
   imports: [RouterLink, TranslatePipe],
   templateUrl: './footer.html',
-  styleUrl: './footer.scss'
+  styleUrls: ['./footer.scss', './footer-media.scss']
 })
 
 

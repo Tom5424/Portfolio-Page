@@ -65,4 +65,9 @@ footer {
             @include mixins.hover($filter: brightness(0) saturate(100%) invert(80%) sepia(34%) saturate(1664%) hue-rotate(105deg) brightness(96%) contrast(98%), $transition: hover 125ms ease-in-out);
         }
     }
+
+
+    &.mobile {
+        display: none;
+    }
 }
