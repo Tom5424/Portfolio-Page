@@ -143,6 +143,7 @@ form {
 
     &.privacy-policy-position {
         @include mixins.position($top: 35px, $left: 300px);
+        pointer-events: none;
     }
 }
 
