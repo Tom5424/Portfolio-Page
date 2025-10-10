@@ -24,7 +24,7 @@ article {
 
 
     img {
-        @include mixins.width-and-height($width: 650px, $height: 350px);
+        @include mixins.width-and-height($width: 650px);
     }
 
 

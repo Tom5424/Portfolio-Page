@@ -195,3 +195,33 @@ form {
 .success-message {
     color: variables.$color-success-message;
 }
+
+
+.container-arrow-mobile {
+    @include mixins.flex-box($justify: flex-end);
+    display: none;
+
+
+    a {
+        @include mixins.hover($filter: brightness(0) saturate(100%) invert(80%) sepia(34%) saturate(1664%) hue-rotate(105deg) brightness(96%) contrast(98%), $border: 1px solid variables.$color-accent, $transition: hover 125ms ease-in-out);
+        padding: 5px;
+    }
+}
+
+
+.address-mobile {
+    @include mixins.flex-box($justify: center);
+    font-style: normal;
+    display: none;
+
+
+    a {
+        @include mixins.hover($filter: brightness(0) saturate(100%) invert(80%) sepia(34%) saturate(1664%) hue-rotate(105deg) brightness(96%) contrast(98%), $transition: hover 125ms ease-in-out);
+        @include mixins.active($text: underline);
+        @include mixins.font-size-and-weight($size: variables.$font-size-lg, $weight: variables.$font-weight-medium);
+        @include mixins.flex-box($flex: column, $align: center);
+        color: variables.$color-accent;
+        gap: variables.$gap-s;
+        text-decoration: none;
+    }
+}

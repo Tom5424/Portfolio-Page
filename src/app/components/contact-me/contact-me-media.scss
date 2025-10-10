@@ -1,0 +1,287 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+@media screen and (max-width: 1286px) {
+
+
+    section {
+        padding: 24px clamp(20px, 10vw, 140px) 24px;
+    }
+
+
+    .container-headline-and-text {
+        @include mixins.width-and-height($width: unset);
+        @include mixins.flex-box($align: center);
+
+
+        h2 {
+
+
+            img {
+                display: none;
+            }
+        }
+
+
+        p {
+            text-align: center;
+        }
+    }
+
+
+    .wrapper-container {
+
+
+        address {
+            display: none;
+        }
+
+
+        >a:last-child {
+            display: none;
+        }
+    }
+
+
+    form {
+        @include mixins.flex-box($align: center);
+
+
+        label {
+            @include mixins.width-and-height($width: 80%);
+            text-align: center;
+        }
+    }
+
+
+    .form-group-wrapper {
+        @include mixins.flex-box($flex: column, $align: center);
+        @include mixins.position($position: relative);
+
+
+        textarea {
+            @include mixins.width-and-height($height: 100px);
+        }
+    }
+
+
+    .form-group {
+
+
+        input {
+            @include mixins.width-and-height($width: 660px);
+        }
+    }
+
+
+    .container-validation-message {
+
+
+        &.message-position {
+            @include mixins.position($top: 300px, $left: 0);
+        }
+
+
+        &.privacy-policy-position {
+            @include mixins.position($top: 48px, $left: 0, $right: 0);
+            @include mixins.flex-box($justify: center);
+        }
+    }
+
+
+    .container-arrow-mobile {
+        @include mixins.flex-box();
+    }
+
+
+    .address-mobile {
+        @include mixins.flex-box();
+    }
+}
+
+
+@media screen and (max-width: 730px) {
+
+
+    .form-group-wrapper {
+
+
+        textarea {
+            @include mixins.width-and-height($width: clamp(220px, 82vw, 660px));
+        }
+    }
+
+
+    .form-group {
+
+
+        input {
+            @include mixins.width-and-height($width: clamp(220px, 82vw, 660px));
+        }
+    }
+
+
+    .container-arrow-mobile {
+        @include mixins.flex-box($justify: center);
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+
+
+    .container-headline-and-text {
+
+
+        h2 {
+            @include mixins.font-size-and-weight($size: clamp(2rem, 8vw, 3.375rem));
+            text-align: center;
+        }
+
+
+        p {
+            @include mixins.font-size-and-weight($size: clamp(1rem, 2.7vw, 1.125rem));
+            @include mixins.width-and-height($width: unset);
+            line-height: 160%;
+        }
+    }
+
+
+    form {
+
+
+        label {
+            @include mixins.font-size-and-weight($size: clamp(1rem, 2.7vw, 1.125rem));
+            @include mixins.width-and-height($width: unset);
+            line-height: 160%;
+            text-align: center;
+        }
+    }
+
+
+    .form-group-wrapper {
+
+
+        textarea {
+            @include mixins.font-size-and-weight($size: clamp(1rem, 2.7vw, 1.125rem));
+        }
+    }
+
+
+    .form-group {
+
+
+        input {
+            @include mixins.font-size-and-weight($size: clamp(1rem, 2.7vw, 1.125rem));
+        }
+    }
+
+
+    // .container-validation-message {
+
+
+    //     &.name-position {
+    //         @include mixins.font-size-and-weight($size: clamp(0.75rem, 2.7vw, 0.875rem));
+    //         // @include mixins.position($top: 53px);
+    //     }
+
+
+    //     &.email-position {
+    //         // @include mixins.position($top: 135px);
+    //     }
+
+
+    //     &.message-position {
+    //         // @include mixins.position($top: 135px, $left: 562px);
+    //     }
+
+
+    //     &.privacy-policy-position {
+    //         // @include mixins.position($top: 35px, $left: 300px);
+    //     }
+    // }
+
+
+    .container-button {
+
+
+        button {
+            @include mixins.font-size-and-weight($size: clamp(1rem, 2.7vw, 1.125rem));
+        }
+    }
+
+
+    .address-mobile {
+
+
+        a {
+            @include mixins.font-size-and-weight($size: clamp(1rem, 2.7vw, 1.125rem));
+            line-height: 120%;
+            text-align: center;
+        }
+    }
+}
+
+
+@media screen and (hover: none), (pointer: coarse) {
+
+
+    .wrapper-container {
+
+
+        address {
+
+
+            a {
+                @include mixins.hover($filter: unset, $transition: hover 125ms ease-in-out);
+                @include mixins.active($filter: brightness(0) saturate(100%) invert(80%) sepia(34%) saturate(1664%) hue-rotate(105deg) brightness(96%) contrast(98%), $transition: hover 125ms ease-in-out);
+            }
+        }
+
+
+        >a:last-child {
+            @include mixins.hover($filter: unset, $border: unset, $transition: hover 125ms ease-in-out);
+            @include mixins.active($filter: brightness(0) saturate(100%) invert(80%) sepia(34%) saturate(1664%) hue-rotate(105deg) brightness(96%) contrast(98%), $border: 1px solid variables.$color-accent, $transition: hover 125ms ease-in-out);
+        }
+    }
+
+
+    form {
+
+
+        label {
+
+
+            a {
+                @include mixins.hover($weight: unset, $transition: hover 125ms ease-in-out);
+            }
+        }
+    }
+
+
+    .button-enable {
+        @include mixins.hover($color: variables.$color-accent, $transition: hover 125ms ease-in-out);
+        @include mixins.active($color: variables.$color-primary, $transition: hover 125ms ease-in-out);
+    }
+
+
+    .container-arrow-mobile {
+
+
+        a {
+            @include mixins.hover($filter: unset, $border: unset, $transition: hover 125ms ease-in-out);
+            @include mixins.active($filter: brightness(0) saturate(100%) invert(80%) sepia(34%) saturate(1664%) hue-rotate(105deg) brightness(96%) contrast(98%), $border: 1px solid variables.$color-accent, $transition: hover 125ms ease-in-out);
+        }
+    }
+
+
+    .address-mobile {
+
+
+        a {
+            @include mixins.hover($filter: unset, $transition: hover 125ms ease-in-out);
+            @include mixins.active($filter: brightness(0) saturate(100%) invert(80%) sepia(34%) saturate(1664%) hue-rotate(105deg) brightness(96%) contrast(98%), $transition: hover 125ms ease-in-out);
+        }
+    }
+}

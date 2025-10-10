@@ -12,7 +12,7 @@ import { TrimmedRequiredDirective } from '../../directives/trimmed-required-dire
   selector: 'app-contact-me',
   imports: [ValidationMessage, FormsModule, NgClass, RouterLink, TranslatePipe, TrimmedRequiredDirective],
   templateUrl: './contact-me.html',
-  styleUrl: './contact-me.scss'
+  styleUrls: ['./contact-me.scss', './contact-me-media.scss']
 })
 
 
