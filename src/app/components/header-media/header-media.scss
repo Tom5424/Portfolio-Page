@@ -33,10 +33,16 @@ header {
 
 
 .container-menu {
-    @include mixins.position($position: fixed, $top: 0, $right: 0, $left: 0);
+    @include mixins.position($position: fixed, $top: 0, $bottom: 0, $right: 0, $left: 0);
+    @include mixins.flex-box($flex: column, $justify: center);
     background: linear-gradient(#000033, #000066);
-    padding: 20px 20px 40px 20px;
     z-index: 1;
+
+
+    img {
+        @include mixins.position($position: absolute, $top: 20px, $right: 20px);
+        @include mixins.hover($cursor: pointer);
+    }
 
 
     nav {
@@ -57,19 +63,14 @@ header {
 
                 a {
                     @include mixins.active($text: underline, $color: variables.$color-accent, $transition: hover 125ms ease-in-out);
-                    @include mixins.hover($cursor: unset);
-                    @include mixins.font-size-and-weight(variables.$font-size-lg, variables.$font-weight-medium);
+                    @include mixins.hover($cursor: pointer);
+                    @include mixins.font-size-and-weight(variables.$font-size-xl, variables.$font-weight-medium);
                     color: variables.$color-primary;
                     text-decoration: none;
                 }
             }
         }
     }
-}
-
-
-.container-close-icon {
-    @include mixins.flex-box($justify: flex-end);
 }
 
 
@@ -80,6 +81,7 @@ header {
 
     p {
         @include mixins.font-size-and-weight(variables.$font-size-lg, variables.$font-weight-bold);
+        @include mixins.hover($cursor: pointer);
         margin: 0;
     }
 
@@ -113,11 +115,36 @@ header {
 
 .slide-in {
     translate: 0 0;
-    transition: translate 500ms ease-in-out;
+    transition: translate 320ms ease-in-out;
 }
 
 
 .slide-out {
     translate: 1500px 0;
-    transition: translate 500ms ease-in-out;
+    transition: translate 320ms ease-in-out;
+}
+
+
+@media screen and (max-width: 650px) {
+
+
+    .container-menu {
+
+
+        nav {
+
+
+            ul {
+
+
+                li {
+
+
+                    a {
+                        @include mixins.font-size-and-weight(clamp(1.125rem, 3vw, 1.375rem));
+                    }
+                }
+            }
+        }
+    }
 }

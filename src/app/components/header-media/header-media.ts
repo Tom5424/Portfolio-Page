@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, inject, input } from '@angular/core';
+import { AfterViewInit, Component, inject, input, Renderer2 } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { TranslateServices } from '../../services/translate-service';
 import { NgClass } from '@angular/common';
@@ -16,6 +16,7 @@ import { ScrollSpyService } from '../../services/scroll-spy-service';
 
 export class HeaderMedia implements AfterViewInit {
   router: Router = inject(Router);
+  renderer2: Renderer2 = inject(Renderer2);
   translateService: TranslateServices = inject(TranslateServices);
   scrollSpyService: ScrollSpyService = inject(ScrollSpyService);
   isOnHomePage = input<boolean>(false);
@@ -35,11 +36,13 @@ export class HeaderMedia implements AfterViewInit {
 
   openMenu(): void {
     this.menuIsOpen = true;
+    this.renderer2.addClass(document.body, 'no-scroll');
   }
 
 
   closeMenu(): void {
     this.menuIsOpen = false;
+    this.renderer2.removeClass(document.body, 'no-scroll');
   }
 
 
@@ -53,6 +56,7 @@ export class HeaderMedia implements AfterViewInit {
   setActiveLink(selectedLink: string): void {
     this.scrollSpyService.scrollToActiveSection(25);
     this.scrollSpyService.activeLink = selectedLink;
+    this.closeMenu();
   }
 
 
@@ -66,6 +70,7 @@ export class HeaderMedia implements AfterViewInit {
       this.translateService.activeLanguage = selectedLanguage;
       this.translateService.saveLanguage(selectedLanguage);
       this.translateService.useLanguage(selectedLanguage);
+      this.closeMenu();
     }
   }
 
