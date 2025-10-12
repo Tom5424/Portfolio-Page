@@ -1,0 +1,39 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+@media screen and (max-width: 900px) {
+
+
+    .container-text {
+        @include mixins.width-and-height($height: 47.3dvh);
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+
+
+    .container-text {
+        @include mixins.width-and-height($height: 47.9dvh);
+
+
+        h1 {
+            @include mixins.font-size-and-weight($size: clamp(2rem, 8vw, 3.375rem));
+        }
+
+
+        p {
+            @include mixins.font-size-and-weight($size: clamp(1rem, 4vw, 1.125rem));
+        }
+    }
+}
+
+
+@media screen and (max-height: 560px) {
+
+
+    .container-text {
+        @include mixins.width-and-height($height: unset);
+    }
+}

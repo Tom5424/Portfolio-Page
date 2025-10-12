@@ -3,15 +3,18 @@
 
 
 .container-text {
-    @include mixins.flex-box($flex: column, $align: center);
+    @include mixins.width-and-height($height: 66.4dvh);
+    @include mixins.flex-box($flex: column, $align: center, $justify: center);
     gap: variables.$gap-lg;
-    padding: 156.3px 0 156.3px 0; 
+    padding: 0 24px 0 24px;
 
 
     h1 {
         @include mixins.font-size-and-weight($size: variables.$font-size-xxxxl);
         color: variables.$color-primary;
         margin: 0;
+        line-height: 140%;
+        text-align: center;
     }
 
 
@@ -19,5 +22,7 @@
         @include mixins.font-size-and-weight($size: variables.$font-size-lg);
         color: variables.$color-accent;
         margin: 0;
+        line-height: 140%;
+        text-align: center;
     }
 }

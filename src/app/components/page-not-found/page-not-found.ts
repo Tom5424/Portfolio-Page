@@ -9,7 +9,7 @@ import { TranslateServices } from '../../services/translate-service';
   selector: 'app-page-not-found',
   imports: [Header, Footer, TranslatePipe],
   templateUrl: './page-not-found.html',
-  styleUrl: './page-not-found.scss'
+  styleUrls: ['./page-not-found.scss', './page-not-found-media.scss']
 })
 
 
