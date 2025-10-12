@@ -5,13 +5,14 @@
 .container-privacy-policy {
     @include mixins.flex-box($flex: column, $align: center);
     gap: variables.$gap-lg;
-    padding: 0 30px 0 30px;
+    padding: 0 24px 0 24px;
 
 
     h1 {
         @include mixins.font-size-and-weight($size: variables.$font-size-xxxxl, $weight: variables.$font-weight-medium);
         color: variables.$color-primary;
         margin: 0;
+        text-align: center;
     }
 
 
@@ -24,6 +25,7 @@
             @include mixins.font-size-and-weight($weight: variables.$font-weight-bold);
             color: variables.$color-primary;
             margin: 0;
+            text-align: center;
         }
 
 
@@ -31,6 +33,7 @@
             @include mixins.font-size-and-weight($weight: variables.$font-weight-bold);
             color: variables.$color-primary;
             margin: 0;
+            text-align: center;
         }
 
 
@@ -38,6 +41,7 @@
             @include mixins.font-size-and-weight($weight: variables.$font-weight-bold);
             color: variables.$color-primary;
             margin: 0;
+            text-align: center;
         }
 
 
@@ -77,6 +81,7 @@
         a {
             @include mixins.active($text: underline);
             color: variables.$color-accent;
+            word-break: break-all;
             text-decoration: none;
         }
     }

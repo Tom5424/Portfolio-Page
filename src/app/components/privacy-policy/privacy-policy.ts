@@ -9,7 +9,7 @@ import { TranslateServices } from '../../services/translate-service';
   selector: 'app-privacy-policy',
   imports: [Header, Footer, TranslatePipe],
   templateUrl: './privacy-policy.html',
-  styleUrl: './privacy-policy.scss'
+  styleUrls: ['./privacy-policy.scss', './privacy-policy-media.scss']
 })
 
 
