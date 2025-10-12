@@ -127,11 +127,13 @@
 
         a:first-child {
             @include mixins.hover($color: variables.$color-primary, $transition: hover 125ms ease-in-out);
+            @include mixins.active($color: variables.$color-accent, $transition: hover 125ms ease-in-out);
         }
 
 
         a:last-child {
             @include mixins.hover($color: variables.$color-text-link, $transition: hover 125ms ease-in-out);
+            @include mixins.active($color: variables.$color-primary, $transition: hover 125ms ease-in-out);
         }
 
 
@@ -140,11 +142,13 @@
 
             a:first-child {
                 @include mixins.hover($color: variables.$color-primary, $transition: hover 125ms ease-in-out);
+                @include mixins.active($color: variables.$color-accent, $transition: hover 125ms ease-in-out);
             }
 
 
             a:last-child {
                 @include mixins.hover($color: variables.$color-text-link, $transition: hover 125ms ease-in-out);
+                @include mixins.active($color: variables.$color-primary, $transition: hover 125ms ease-in-out);
             }
         }
     }

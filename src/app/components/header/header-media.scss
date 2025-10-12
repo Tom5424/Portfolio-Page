@@ -2,7 +2,17 @@
 @use '../../../mixins.scss';
 
 
+@media screen and (max-width: 900px) {
+
+
+    header {
+        padding: 24px clamp(20px, 10vw, 140px) 24px,
+    }
+}
+
+
 @media screen and (hover: none) and (pointer: coarse) {
+
 
     header {
 
