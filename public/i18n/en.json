@@ -11,7 +11,7 @@
     },
     "whyMe": {
         "headline": "Why me",
-        "textAboutMe": "Hi, I'm Tom. I'm a certified full-stack developer with knowledge of Angular, TypeScript, Python, and Django. I enjoy programming because it gives me the opportunity to learn new technologies and approaches. I've already solved many problems in various projects, which I've really enjoyed.",
+        "textAboutMe": "Hi, I'm Tom. I'm a certified full-stack developer with skills in Angular, TypeScript, Python, and Django. I love programming because it allows me to explore new technologies and concepts. I also regularly learn new ways to solve problems. Successfully completing a project motivates me and helps me grow. Through the implementation of numerous projects, I've solved many problems.",
         "textLetsTalk": "Let's talk"
     },
     "mySkills": {
@@ -29,7 +29,7 @@
     },
     "contactMe": {
         "headline": "Contact me",
-        "text": "I look forward to hearing from you! I'm particularly interested in the role of full-stack developer. The opportunity to help shape projects and implement ideas as part of a team appeals to me.",
+        "text": "I look forward to hearing from you! I'm particularly interested in the role of full-stack developer. I'm looking forward to actively shaping projects and implementing ideas together as a team.",
         "placeholders": {
             "name": "Your Name",
             "email": "Your Email",

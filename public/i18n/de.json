@@ -11,7 +11,7 @@
     },
     "whyMe": {
         "headline": "Warum ich",
-        "textAboutMe": "Hallo, ich bin Tom. Ich bin zertifizierter Full-Stack-Entwickler mit Kenntnissen in Angular, TypeScript, Python und Django. Programmieren macht mir Spaß, weil es mir die Möglichkeit gibt, neue Technologien und Ansätze kennenzulernen. Ich habe bereits viele Probleme in verschiedenen Projekten gelöst, was mir viel Spaß gemacht hat.",
+        "textAboutMe": "Hallo, ich bin Tom. Ich bin zertifizierter Full-Stack-Entwickler mit Kenntnissen in Angular, TypeScript, Python und Django. Programmieren begeistert mich, weil ich dadurch neue Technologien und Konzepte kennenlerne. Außerdem lerne ich regelmäßig neue wege Probleme zu lösen. Ein Projekt erfolgreich abzuschließen treibt mich an und lässt mich wachsen. Durch die umsetztung von zahlreichen Projekten, habe ich viele Probleme gelöst.",
         "textLetsTalk": "Lass uns reden"
     },
     "mySkills": {
@@ -29,7 +29,7 @@
     },
     "contactMe": {
         "headline": "Kontaktiere mich",
-        "text": "Ich freue mich auf deine Kontaktaufnahme! Besonders die Rolle als Fullstack Entwickler interessiert mich. Die Möglichkeit, Projekte mitzugestalten und Ideen im Team umzusetzen, reizt mich.",
+        "text": "Ich freue mich auf deine Kontaktaufnahme! Besonders die Rolle als Fullstack Entwickler interessiert mich sehr. Ich freue mich darauf, Projekte aktiv mitzugestalten und Ideen gemeinsam im Team umzusetzen.",
         "placeholders": {
             "name": "Dein Name",
             "email": "Deine Email",
