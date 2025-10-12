@@ -13,7 +13,6 @@
         @include mixins.font-size-and-weight($size: variables.$font-size-xxxxl);
         color: variables.$color-primary;
         margin: 0;
-        line-height: 140%;
         text-align: center;
     }
 

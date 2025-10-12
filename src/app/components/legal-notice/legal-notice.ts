@@ -9,7 +9,7 @@ import { TranslateServices } from '../../services/translate-service';
   selector: 'app-legal-notice',
   imports: [Header, Footer, TranslatePipe],
   templateUrl: './legal-notice.html',
-  styleUrl: './legal-notice.scss'
+  styleUrls: ['./legal-notice.scss', './legal-notice-media.scss']
 })
 
 

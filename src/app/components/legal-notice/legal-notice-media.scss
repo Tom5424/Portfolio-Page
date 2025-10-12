@@ -1,0 +1,46 @@
+@use '../../../variables.scss';
+@use '../../../mixins.scss';
+
+
+@media screen and (min-width: 1600px) {
+
+
+    .container-legal-notice {
+
+
+        section {
+
+
+            address {
+                @include mixins.font-size-and-weight($size: variables.$font-size-lg);
+            }
+        }
+
+
+        footer {
+            @include mixins.font-size-and-weight($size: variables.$font-size-lg);
+        }
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+
+
+    .container-legal-notice {
+
+
+        h1 {
+            @include mixins.font-size-and-weight($size: clamp(2rem, 8vw, 3.375rem));
+        }
+
+
+        section {
+
+
+            h2 {
+                @include mixins.font-size-and-weight($size: clamp(1.125rem, 3.5vw, 1.5rem));
+            }
+        }
+    }
+}

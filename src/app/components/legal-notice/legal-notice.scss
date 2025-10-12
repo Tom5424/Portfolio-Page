@@ -24,6 +24,7 @@
             @include mixins.font-size-and-weight($weight: variables.$font-weight-bold);
             color: variables.$color-primary;
             margin: 0;
+            text-align: center;
         }
 
 
