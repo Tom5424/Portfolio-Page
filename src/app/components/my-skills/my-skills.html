@@ -5,7 +5,7 @@
     <ul>
 
         @for (skill of skills; track $index;) {
-        <li [usal]="`zoomin-100 ease-in-out duration-500 once delay-${$index * 100}`"
+        <li [usal]="`zoomin-100 ease-in-out duration-500 once delay-${$index * 90}`"
             [attr.data-tooltip]="'mySkills.challengeMeText' | translate">
             
             <img [src]="skill.imgPath" [alt]="skill.altText">
