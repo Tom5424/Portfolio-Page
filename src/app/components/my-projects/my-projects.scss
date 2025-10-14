@@ -19,7 +19,7 @@ section {
 
 
 article {
-    @include mixins.flex-box($align: flex-start);
+    @include mixins.flex-box();
     gap: variables.$gap-xxl;
 
 
