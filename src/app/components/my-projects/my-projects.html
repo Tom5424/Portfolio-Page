@@ -3,7 +3,7 @@
 
 
     @for (project of projects; track $index) {
-    <article [usal]="$index % 2 === 0 ?  'fade-r-100 once duration-500' : 'fade-l-100 once duration-500'">
+    <article usal="zoomin-100 ease-in-out once duration-1000">
         <img [src]="project.imgPath" alt="">
 
 
@@ -23,7 +23,7 @@
 
 
     <!-- Display only in mobile view -->
-    <div [usal]="$index % 2 === 0 ?  'fade-r-100 once duration-500' : 'fade-l-100 once duration-500'"
+    <div usal="zoomin-100 ease-in-out once duration-1000"
         class="container-links mobile">
         <a [href]="project.githubLink" target="_blank">GitHub</a>
         <a [href]="project.liveTestLink" target="_blank">Live Test</a>
