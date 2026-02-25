@@ -16,6 +16,7 @@ export class MySkills {
     { imgPath: '/img-icons/angular.svg', text: 'Angular', altText: 'Skill: Angular' },
     { imgPath: '/img-icons/typescript.svg', text: 'TypeScript', altText: 'Skill: TypeScript' },
     { imgPath: '/img-icons/javascript.svg', text: 'JavaScript', altText: 'Skill: JavaScript' },
+    { imgPath: '/img-icons/vue-js.svg', text: 'Vue.Js', altText: 'Skill: Vue.Js' },
     { imgPath: '/img-icons/api.svg', text: 'Rest-Api', altText: 'Skill: Rest-Api' },
     { imgPath: '/img-icons/firebase.svg', text: 'Firebase', altText: 'Skill: Firebase' },
     { imgPath: '/img-icons/git.svg', text: 'GIT', altText: 'Skill: GIT' },
